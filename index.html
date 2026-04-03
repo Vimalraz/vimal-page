@@ -1,35 +1,1321 @@
-I open my eyes and begin dreaming
-And every dream is the same
-A pillar battered by chaotic forces
-A nail hammered down by other nails
-Unrelenting unreactionary disturbation
+<!DOCTYPE html>
+<html lang="en">
 
-I close my eyes and stop dreaming
-In the upper room of my mind
-Father, I am home. I am in the garden
-Find me in places not yet named
-And places not yet known by the dreamers
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trishul Biotech — Biologicals Intelligence | Marine Algae Biostimulants</title>
+  <meta name="description"
+    content="Trishul Biotech — India's science-led biologicals company. Marine algae biostimulants, organic fertilizers, and the UPCROP® Seven Pillar System for every crop stage. ISO 9001:2015, NPOP, NOP & EC Organic certified.">
+  <meta name="keywords"
+    content="Trishul Biotech, marine algae, biostimulant, organic fertilizer, UPCROP, crop science, agriculture, biologicals">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trishul Biotech — Biologicals Intelligence">
+  <meta property="og:description"
+    content="Science-led biological inputs for every crop stage. Marine algae biostimulants, bio-potash, and the UPCROP® Seven Pillar System.">
+  <meta property="og:image" content="img/trishul-biotech-agricultural-solutions.jpg">
+  <meta property="og:url" content="https://trishulbiotech.com/">
+  <meta property="og:site_name" content="Trishul Biotech">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trishul Biotech — Biologicals Intelligence">
+  <meta name="twitter:description"
+    content="Marine algae biostimulants & organic fertilizers. UPCROP® Seven Pillar System for crop intelligence.">
+  <meta name="twitter:image" content="img/trishul-biotech-agricultural-solutions.jpg">
+  <link rel="icon" href="img/F-icon-01.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/F-icon-01.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trishul Biotech","url":"https://trishulbiotech.com","logo":"img/trishul-biotech-logo.svg","description":"Science-led biological inputs for agriculture — marine algae biostimulants, organic fertilizers, and the UPCROP® Seven Pillar System.","address":{"@type":"PostalAddress","addressLocality":"Sivakasi","addressRegion":"Tamil Nadu","addressCountry":"IN"},"sameAs":["https://www.facebook.com/trishulbiotech","https://www.instagram.com/trishulbiotech_","https://www.linkedin.com/company/trishul-biotech/"]}</script>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-I create from within and affect without
-For there can be no without without me
-Mountains are born and planets formed
-And seas are filled and kingdoms made
-Timeless, boundless and without end
+<body>
 
-I become myself and you and everyone
-People born, dead and unborn, I am
-Today, I was and tomorrow I will be
-And of times past and yesterdays, I am
-In the mirror's reflection, everyone
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loading-screen">
+    <img src="img/trishul-biotech-logo.svg" alt="Trishul Biotech" class="loading-logo">
+  </div>
 
-I know everything that was is and will be
-Every question asked is born a twin
-And the answer, question's younger brother
-Through thought I access the mind-drive
-Of past selfdoms and histories and phantoms
+  <!-- HEADER -->
+  <header id="main-header">
+    <nav class="header-nav-left">
+      <button class="nav-btn" onclick="navTo('tech',event)">UPCROP® System</button>
+      <button class="nav-btn" onclick="navTo('labs',event)">Labs</button>
+      <button class="nav-btn" onclick="navTo('india',event)">Products</button>
+    </nav>
+    <div class="logo-center" onclick="navTo('home',event)" style="cursor:pointer;">
+      <img src="img/trishul-biotech-logo.svg" class="header-logo-img" alt="Trishul Biotech">
+    </div>
+    <nav class="header-nav-right">
+      <button class="nav-btn" onclick="navTo('gallery',event)">Resources</button>
+      <button class="nav-cta-pill" onclick="navTo('contact',event)">Partner With Us</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-The world of living and world of the dead
-My body the vehicle, the bridge inbetween
-The primal source of all things plugged in
-I live forever in my undreaming chamber
-I die and am killed in my dreams each night
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay" id="mob-overlay" onclick="closeMobileNav()"></div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-btn" onclick="navTo('tech',event);closeMobileNav()">UPCROP® System</button>
+    <button class="mobile-nav-btn" onclick="navTo('labs',event);closeMobileNav()">Labs</button>
+    <button class="mobile-nav-btn" onclick="navTo('india',event);closeMobileNav()">Products</button>
+    <button class="mobile-nav-btn" onclick="navTo('gallery',event);closeMobileNav()">Resources</button>
+    <button class="mobile-nav-cta" onclick="navTo('contact',event);closeMobileNav()">Partner With Us</button>
+    <div class="mobile-nav-social">
+      <a href="https://www.facebook.com/trishulbiotech" target="_blank">FB</a>
+      <a href="https://www.instagram.com/trishulbiotech_" target="_blank">IG</a>
+      <a href="https://www.linkedin.com/company/trishul-biotech/" target="_blank">LI</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════
+     HOME
+════════════════════════════════════════════════════ -->
+  <div id="home" class="section active">
+
+    <!-- LAYER 1: HERO — Full Page -->
+    <div class="hero-fullpage" id="hero-fullpage">
+      <div class="hero-fullbg"></div>
+
+      <div class="hero-center-content">
+        <div class="hero-kicker hero-anim-1">
+          <span class="hero-kicker-dot"></span>
+          <span>India's Science-Led Biologicals Company</span>
+        </div>
+        <h1 class="hero-anim-2">
+          Biologicals <span class="accent">Intelligence.</span> <span class="accent2">Delivered.</span>
+        </h1>
+        <p class="hero-center-tagline hero-anim-3">Better crops. Less waste. Premium produce.</p>
+        <div class="hero-cta hero-anim-4">
+          <button class="btn-pill-primary" onclick="navTo('india',event)">Explore Products</button>
+          <button class="btn-pill-secondary" onclick="navTo('tech',event)">Discover UPCROP® Science</button>
+        </div>
+      </div>
+      <!-- MARQUEE — inside hero, above scroll-to-explore -->
+      <div class="hero-marquee-wrap">
+        <div class="hero-marquee-track">
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M12 2C6 2 3 8 3 12c0 2.5 1.5 4.5 3 6 1 .8 2 1 3 1h6c1 0 2-.2 3-1 1.5-1.5 3-3.5 3-6 0-4-3-10-9-10z" />
+              <path d="M12 2v16" />
+            </svg>Nutrient Use Efficiency</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>Stress Mitigation</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+              <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+              <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+            </svg>Marine Algae Portfolio</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="1" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>Own Manufacturing</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>Verified Organic: IN · US · EU</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>7 Innovation Pillars</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4" />
+            </svg>Zero Waste Manufacturing</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>ISO 9001:2015 Certified</div>
+          <!-- duplicate for seamless loop -->
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M12 2C6 2 3 8 3 12c0 2.5 1.5 4.5 3 6 1 .8 2 1 3 1h6c1 0 2-.2 3-1 1.5-1.5 3-3.5 3-6 0-4-3-10-9-10z" />
+              <path d="M12 2v16" />
+            </svg>Nutrient Use Efficiency</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>Stress Mitigation</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+              <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+              <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2" />
+            </svg>Marine Algae Portfolio</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="1" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>Own Manufacturing</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>Verified Organic: IN · US · EU</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>7 Innovation Pillars</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4" />
+            </svg>Zero Waste Manufacturing</div>
+          <div class="hero-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>ISO 9001:2015 Certified</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS BANNER -->
+    <div class="stats-banner" id="features-strip">
+      <div class="stats-banner-inner">
+        <div class="stat-item">
+          <div class="stat-item-num">7</div>
+          <div class="stat-item-label">Innovation Pillars for Every Crop</div>
+        </div>
+        <div class="stat-vdivider"></div>
+        <div class="stat-item">
+          <div class="stat-item-num gold">ISO</div>
+          <div class="stat-item-label">9001:2015 Certified</div>
+        </div>
+        <div class="stat-vdivider"></div>
+        <div class="stat-item">
+          <div class="stat-item-num">FCO</div>
+          <div class="stat-item-label">Government Gazette Registered</div>
+        </div>
+        <div class="stat-vdivider"></div>
+        <div class="stat-item">
+          <div class="stat-item-num gold">Zero</div>
+          <div class="stat-item-label">Waste Discharge Manufacturing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES SHOWCASE -->
+    <div class="features-showcase">
+      <div class="features-inner">
+        <div class="features-card">
+          <div class="fc-left">
+            <div class="fc-section-label">Why Trishul Biotech</div>
+            <div class="fc-items">
+              <div class="fc-item active" data-index="0" onclick="fcSelect(0)">
+                <div class="fc-item-head">
+                  <span class="fc-item-title">Multi-Centre R&amp;D</span>
+                </div>
+                <div class="fc-item-body">4 labs across India — from biomarker discovery to field validation. Our
+                  multi-centre science ensures results are consistent across India's diverse agro-climatic zones.</div>
+              </div>
+              <div class="fc-hdiv">
+                <div class="fc-progress"></div>
+              </div>
+              <div class="fc-item" data-index="1" onclick="fcSelect(1)">
+                <div class="fc-item-head">
+                  <span class="fc-item-title">Own Manufacturing</span>
+                </div>
+                <div class="fc-item-body">GMP + ISO facility in Sivakasi — complete supply chain control from raw
+                  material to finished product. No outsourcing. Consistent quality, every batch.</div>
+              </div>
+              <div class="fc-hdiv">
+                <div class="fc-progress"></div>
+              </div>
+              <div class="fc-item" data-index="2" onclick="fcSelect(2)">
+                <div class="fc-item-head">
+                  <span class="fc-item-title">Biological Portfolio</span>
+                </div>
+                <div class="fc-item-body">Marine algae biologicals as our anchor — with a growing range of
+                  bio-stimulants, bio-fertilizers, and crop protection inputs across every crop stage.</div>
+              </div>
+              <div class="fc-hdiv">
+                <div class="fc-progress"></div>
+              </div>
+              <div class="fc-item" data-index="3" onclick="fcSelect(3)">
+                <div class="fc-item-head">
+                  <span class="fc-item-title">Pan-India Reach</span>
+                </div>
+                <div class="fc-item-body">Warehouses &amp; distribution across all major crop-growing hubs in India —
+                  bringing science-backed biological inputs directly to farmers and agri-retailers.</div>
+              </div>
+              <div class="fc-hdiv"><div class="fc-progress"></div></div>
+            </div>
+          </div>
+          <div class="fc-right">
+            <div class="fc-img-wrap">
+              <img class="fc-img active" src="img/agricultural-research-and-development-center.jpg"
+                alt="Multi-Centre R&D">
+              <img class="fc-img" src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing">
+              <img class="fc-img" src="img/bio-stimulant.jpg" alt="Biological Portfolio">
+              <img class="fc-img" src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAYER 1 cont: What You Sell — Quick Clarity -->
+    <div class="clarity-section">
+      <div class="clarity-inner">
+        <div class="clarity-header reveal">
+          <div class="clarity-header-left">
+            <div class="eyebrow-pill">What We Offer</div>
+            <h2 class="clarity-title">Science-Led Biological Inputs for Every Crop Stage</h2>
+          </div>
+          <div class="clarity-header-right">
+            <button class="btn-primary" onclick="navTo('india',event)">Full Product Portfolio →</button>
+            <button class="btn-secondary" onclick="navTo('tech',event)"
+              style="color:var(--forest-dk);border-color:var(--forest-md);">Explore UPCROP® Science →</button>
+          </div>
+        </div>
+        <div class="clarity-layout">
+
+          <div class="clarity-card reveal reveal-delay-1">
+            <div class="clarity-card-img-wrap">
+              <img src="img/trishul-biotech-biostimulants.jpg" alt="Marine Algae Biostimulants" class="clarity-card-img"
+                loading="lazy">
+              <div class="clarity-card-num">01</div>
+            </div>
+            <div class="clarity-card-body">
+              <h3>Marine Algae Biostimulants</h3>
+              <p>Precision formulations from tropical and temperate marine algae targeting nutrient use efficiency,
+                stress mitigation, and crop quality. The UPCROP® system aligns seven pillars to each critical crop
+                growth stage.</p>
+              <div class="clarity-tags">
+                <span class="ctag">Retail</span><span class="ctag-dot">·</span>
+                <span class="ctag">Foliar</span><span class="ctag-dot">·</span>
+                <span class="ctag">Drip</span><span class="ctag-dot">·</span>
+                <span class="ctag">B2B Bulk</span><span class="ctag-dot">·</span>
+                <span class="ctag">NPOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">NOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">EC Organic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="clarity-card reveal reveal-delay-2">
+            <div class="clarity-card-img-wrap">
+              <img src="img/trishul-biotech-organic-fertilizer.jpg" alt="Bio-Potash & Organic Fertilizers"
+                class="clarity-card-img" loading="lazy">
+              <div class="clarity-card-num">02</div>
+            </div>
+            <div class="clarity-card-body">
+              <h3>Bio-Potash & Organic Fertilizers</h3>
+              <p>Our PDR Series delivers FCO Grade organic potash from red marine algae — bioavailable potassium with
+                organic sulphur for sustainable crop nutrition without synthetic inputs.</p>
+              <div class="clarity-tags">
+                <span class="ctag">PDR Grade 1 &amp; 2</span><span class="ctag-dot">·</span>
+                <span class="ctag">B2B Bulk</span><span class="ctag-dot">·</span>
+                <span class="ctag">NPOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">NOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">EC Organic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="clarity-card reveal reveal-delay-1">
+            <div class="clarity-card-img-wrap">
+              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Technical B2B Raw Materials"
+                class="clarity-card-img" loading="lazy">
+              <div class="clarity-card-num">03</div>
+            </div>
+            <div class="clarity-card-body">
+              <h3>Technical / B2B Raw Materials</h3>
+              <p>High-purity marine algae extracts for agrochemical manufacturers, biostimulant formulators, and
+                research institutions — with full certification, traceability, and technical support.</p>
+              <div class="clarity-tags">
+                <span class="ctag">B2B</span><span class="ctag-dot">·</span>
+                <span class="ctag">Bulk Supply</span><span class="ctag-dot">·</span>
+                <span class="ctag">Industrial</span><span class="ctag-dot">·</span>
+                <span class="ctag">NPOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">EC Organic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="clarity-card reveal reveal-delay-2">
+            <div class="clarity-card-img-wrap">
+              <img src="img/trishul-biotech-agricultural-solutions.jpg" alt="Global Export Products"
+                class="clarity-card-img" loading="lazy">
+              <div class="clarity-card-num">04</div>
+            </div>
+            <div class="clarity-card-body">
+              <h3>Global Export Products</h3>
+              <p>The UPCROP® international range meets European, US, and South-East Asian regulatory standards —
+                certified under NOP (USDA) and EC Organic frameworks for worldwide export.</p>
+              <div class="clarity-tags">
+                <span class="ctag">Global</span><span class="ctag-dot">·</span>
+                <span class="ctag">B2B Bulk Supply</span><span class="ctag-dot">·</span>
+                <span class="ctag">NOP</span><span class="ctag-dot">·</span>
+                <span class="ctag">EC Organic</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Heritage -->
+    <div class="legacy-section">
+      <div class="legacy-inner">
+        <div class="legacy-header reveal">
+          <div class="eyebrow-pill">Our Foundation</div>
+          <h2 class="legacy-title">A Heritage Built on Purpose &amp; Principle</h2>
+        </div>
+        <div class="legacy-grid">
+          <div class="legacy-card reveal reveal-delay-1">
+            <div class="legacy-card-img-wrap">
+              <img src="img/trishul-biotech.jpg" alt="A Heritage of Integrity" class="legacy-card-img" loading="lazy">
+              <div class="legacy-num">01</div>
+            </div>
+            <div class="legacy-card-body">
+              <h3>A Heritage of Integrity</h3>
+              <p>Our journey is rooted in a business legacy spanning over eight decades. We carry forward the values of
+                our founding visionary — a dedicated philanthropist who believed that true success is measured by the
+                lives we uplift and the communities we empower.</p>
+            </div>
+          </div>
+          <div class="legacy-card reveal reveal-delay-2">
+            <div class="legacy-card-img-wrap">
+              <img src="img/sustainable-farming-solutions.jpg" alt="Philanthropy to Progress" class="legacy-card-img"
+                loading="lazy">
+              <div class="legacy-num">02</div>
+            </div>
+            <div class="legacy-card-body">
+              <h3>Philanthropy to Progress</h3>
+              <p>From building hospitals and schools to empowering families, our grandfather's spirit of giving defines
+                Trishul Biotech today. We have transitioned from one of India's largest manufacturing houses — rapidly
+                evolving into agricultural biologicals, driven by the same commitment to social and environmental
+                responsibility.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     UPCROP® SYSTEM (Technology — Layer 2+3)
+════════════════════════════════════════════════════ -->
+  <div id="tech" class="section">
+
+    <!-- HERO BANNER -->
+    <div class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/trishul-biotech-agricultural-solutions.jpg');">
+      <div class="page-hero-content">
+        <div class="eyebrow-pill" style="margin: 0 auto 24px; border-color: rgba(255,255,255,0.3); color: var(--mint);">UPCROP® Technology Platform</div>
+        <h2 style="font-family:'Raleway',sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; color: #fff; line-height: 1.1; margin-bottom: 20px;">
+          Science Behind Every Solution
+        </h2>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 650px; margin: 0 auto;">
+          Our formulations are built on deep expertise in marine algae biochemistry — harnessing cytokinins, phlorotannins, polyols, and natural auxins for crop-specific, stage-targeted outcomes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Layer 2: Credibility -->
+    <div class="tech-section" style="padding-top:60px;">
+      <div class="tech-cards">
+        <div class="tech-card reveal">
+          <img src="img/agriculture-lab.jpg" alt="Marine Algae Biotechnology" class="tech-card-img" loading="lazy">
+          <div class="tc-icon">🌊</div>
+          <div class="tc-title">Marine Algae Biotechnology</div>
+          <div class="tc-body">Deep expertise in tropical and temperate marine algae biochemistry — from <em>Kappaphycus
+              alvarezii</em> and <em>Gracilaria edulis</em> to <em>Ascophyllum nodosum</em> and <em>Ecklonia maxima</em>
+            — each chosen for specific bioactive profiles.</div>
+        </div>
+        <div class="tech-card reveal reveal-delay-1">
+          <img src="img/technology-to-improve-crop-quality.jpg" alt="Stage-Aligned Crop Design" class="tech-card-img"
+            loading="lazy">
+          <div class="tc-icon">🎯</div>
+          <div class="tc-title">Stage-Aligned Crop Design</div>
+          <div class="tc-body">The UPCROP® Pillar System targets each critical growth stage — from root development and
+            canopy building to fruiting, stress management, and post-harvest quality. Not one product for all; seven
+            pillars, each with distinct physiology.</div>
+        </div>
+        <div class="tech-card reveal reveal-delay-2">
+          <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Responsible Manufacturing" class="tech-card-img"
+            loading="lazy">
+          <div class="tc-icon">♻️</div>
+          <div class="tc-title">Responsible Manufacturing</div>
+          <div class="tc-body">Our Sivakasi facility operates with zero water discharge and zero solid waste — a model
+            for environmental responsibility in biologicals production, certified under ISO 9001:2015, GMP, and Control
+            Union Organic standards.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layer 3: UPCROP® Flywheel — 7 Pillars (interactive) -->
+    <div class="flywheel-section">
+      <div class="flywheel-header">
+        <div class="section-eyebrow" style="color:var(--mint);justify-content:center">UPCROP® Global Pillar System</div>
+        <h2>Seven Pillars. One Continuous<br>Crop Intelligence Cycle.</h2>
+      </div>
+      <p class="flywheel-intro">What if every crop stage had its own biological intelligence? The UPCROP® Pillar System
+        is engineered to unlock a distinct physiological opportunity at each stage of the crop's growth journey — from
+        the first root in soil to the final moment of harvest.</p>
+      <p class="flywheel-hint">Click a pillar segment or name to explore its science and products →</p>
+
+      <div class="flywheel-main">
+        <!-- LEFT: Wheel + Crop -->
+        <div class="flywheel-left">
+          <div class="swirl-wrap" id="swirl-wrap">
+            <svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" id="swirl-svg">
+              <defs>
+                <filter id="glow-f">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <circle cx="280" cy="280" r="245" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+              <circle cx="280" cy="280" r="200" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+
+              <g id="seg-raiz" class="swirl-seg" onclick="selectPillar('raiz')" style="cursor:pointer">
+                <path class="swirl-path" id="path-raiz"
+                  d="M280,280 L280,45 A235,235 0 0,1 476,155 A185,185 0 0,0 280,95 Z" fill="#6B4423" opacity="0.9" />
+                <text x="380" y="108" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" transform="rotate(26,380,108)" opacity="0.7">01</text>
+              </g>
+              <g id="seg-phyto" class="swirl-seg" onclick="selectPillar('phyto')" style="cursor:pointer">
+                <path class="swirl-path" id="path-phyto"
+                  d="M280,280 L476,155 A235,235 0 0,1 476,405 A185,185 0 0,0 430,195 Z" fill="#2A5C1E" opacity="0.9" />
+                <text x="460" y="280" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" opacity="0.7">02</text>
+              </g>
+              <g id="seg-nutri" class="swirl-seg" onclick="selectPillar('nutri')" style="cursor:pointer">
+                <path class="swirl-path" id="path-nutri"
+                  d="M280,280 L476,405 A235,235 0 0,1 352,497 A185,185 0 0,0 430,370 Z" fill="#1A3570" opacity="0.9" />
+                <text x="396" y="458" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" transform="rotate(-26,396,458)" opacity="0.7">05</text>
+              </g>
+              <g id="seg-stress" class="swirl-seg" onclick="selectPillar('stress')" style="cursor:pointer">
+                <path class="swirl-path" id="path-stress"
+                  d="M280,280 L352,497 A235,235 0 0,1 208,497 A185,185 0 0,0 280,455 Z" fill="#7A3D10" opacity="0.9" />
+                <text x="280" y="503" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" opacity="0.7">03</text>
+              </g>
+              <g id="seg-quali" class="swirl-seg" onclick="selectPillar('quali')" style="cursor:pointer">
+                <path class="swirl-path" id="path-quali"
+                  d="M280,280 L208,497 A235,235 0 0,1 84,405 A185,185 0 0,0 210,455 Z" fill="#4A1A6E" opacity="0.9" />
+                <text x="164" y="458" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" transform="rotate(26,164,458)" opacity="0.7">04</text>
+              </g>
+              <g id="seg-bioguard" class="swirl-seg" onclick="selectPillar('bioguard')" style="cursor:pointer">
+                <path class="swirl-path" id="path-bioguard"
+                  d="M280,280 L84,405 A235,235 0 0,1 84,155 A185,185 0 0,0 130,370 Z" fill="#C0392B" opacity="0.9" />
+                <text x="100" y="280" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" opacity="0.7">06</text>
+              </g>
+              <g id="seg-bioflow" class="swirl-seg" onclick="selectPillar('bioflow')" style="cursor:pointer">
+                <path class="swirl-path" id="path-bioflow"
+                  d="M280,280 L84,155 A235,235 0 0,1 280,45 A185,185 0 0,0 130,195 Z" fill="#00B4C5" opacity="0.9" />
+                <text x="164" y="108" font-size="10" fill="white" font-family="Darker Grotesque,sans-serif"
+                  font-weight="700" text-anchor="middle" transform="rotate(-26,164,108)" opacity="0.7">07</text>
+              </g>
+
+              <path
+                d="M280,280 C320,220 380,200 400,240 C420,280 380,340 320,340 C260,340 200,300 200,240 C200,180 260,140 320,140"
+                fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="28" />
+
+              <circle cx="280" cy="280" r="95" fill="#2B3720" />
+              <circle cx="280" cy="280" r="93" fill="none" stroke="rgba(65,224,155,0.35)" stroke-width="1.5" />
+              <circle cx="280" cy="280" r="88" fill="none" stroke="rgba(65,224,155,0.15)" stroke-width="1" />
+
+              <text x="280" y="268" font-family="Raleway,sans-serif" font-size="13" font-weight="800" fill="#41E09B"
+                text-anchor="middle" letter-spacing="0.5">UPCROP®</text>
+              <text x="280" y="286" font-family="Raleway,sans-serif" font-size="12" font-weight="500"
+                fill="rgba(255,255,255,0.7)" text-anchor="middle">System</text>
+              <text x="280" y="303" font-family="Darker Grotesque,sans-serif" font-size="8" font-weight="600"
+                fill="rgba(255,255,255,0.28)" text-anchor="middle" letter-spacing="2">7 PILLARS</text>
+
+              <line x1="280" y1="280" x2="280" y2="45" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="476" y2="155" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="476" y2="405" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="352" y2="497" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="208" y2="497" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="84" y2="405" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+              <line x1="280" y1="280" x2="84" y2="155" stroke="rgba(43,55,32,0.8)" stroke-width="2" />
+            </svg>
+
+            <div class="pillar-labels">
+              <div class="p-label" id="lbl-raiz" style="top:5px;right:8px;color:#C49A6C;flex-direction:row-reverse"
+                onmouseenter="hoverPillar('raiz')" onmouseleave="unhoverPillar()" onclick="selectPillar('raiz')">
+                <span class="p-dot" style="background:#6B4423"></span>RaizUp
+              </div>
+              <div class="p-label" id="lbl-phyto" style="top:48%;right:-10px;transform:translateY(-50%);color:#6BBF4E"
+                onmouseenter="hoverPillar('phyto')" onmouseleave="unhoverPillar()" onclick="selectPillar('phyto')">
+                <span class="p-dot" style="background:#2A5C1E"></span>PhytoBoost
+              </div>
+              <div class="p-label" id="lbl-nutri" style="bottom:5px;right:8px;color:#5B80C4;flex-direction:row-reverse"
+                onmouseenter="hoverPillar('nutri')" onmouseleave="unhoverPillar()" onclick="selectPillar('nutri')">
+                <span class="p-dot" style="background:#1A3570"></span>NutriSpike
+              </div>
+              <div class="p-label" id="lbl-stress"
+                style="bottom:-18px;left:50%;transform:translateX(-50%);color:#C47A40"
+                onmouseenter="hoverPillar('stress')" onmouseleave="unhoverPillar()" onclick="selectPillar('stress')">
+                <span class="p-dot" style="background:#7A3D10"></span>Stressilient
+              </div>
+              <div class="p-label" id="lbl-quali" style="bottom:5px;left:8px;color:#9B60C4"
+                onmouseenter="hoverPillar('quali')" onmouseleave="unhoverPillar()" onclick="selectPillar('quali')">
+                <span class="p-dot" style="background:#4A1A6E"></span>QualiGain
+              </div>
+              <div class="p-label" id="lbl-bioguard"
+                style="top:48%;left:-6px;transform:translateY(-50%);flex-direction:row-reverse;color:#E07070"
+                onmouseenter="hoverPillar('bioguard')" onmouseleave="unhoverPillar()"
+                onclick="selectPillar('bioguard')">
+                BioGuard<span class="p-dot" style="background:#C0392B"></span>
+              </div>
+              <div class="p-label" id="lbl-bioflow" style="top:5px;left:8px;color:#00D4E0"
+                onmouseenter="hoverPillar('bioflow')" onmouseleave="unhoverPillar()" onclick="selectPillar('bioflow')">
+                <span class="p-dot" style="background:#00B4C5"></span>BioFlow
+              </div>
+            </div>
+          </div>
+
+          <!-- Crop Illustration -->
+          <div class="crop-illus">
+            <div class="crop-svg-wrap">
+              <svg id="crop-svg" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg"
+                style="width:100%;height:190px">
+                <rect width="560" height="200" fill="rgba(255,255,255,0.025)" rx="4" />
+                <g id="crop-sun" class="crop-part" opacity="0.35">
+                  <circle cx="490" cy="35" r="22" fill="#F9C929" />
+                  <line x1="490" y1="7" x2="490" y2="1" stroke="#F9C929" stroke-width="2" />
+                  <line x1="490" y1="63" x2="490" y2="69" stroke="#F9C929" stroke-width="2" />
+                  <line x1="462" y1="35" x2="456" y2="35" stroke="#F9C929" stroke-width="2" />
+                  <line x1="518" y1="35" x2="524" y2="35" stroke="#F9C929" stroke-width="2" />
+                  <line x1="471" y1="16" x2="467" y2="12" stroke="#F9C929" stroke-width="2" />
+                  <line x1="509" y1="54" x2="513" y2="58" stroke="#F9C929" stroke-width="2" />
+                  <line x1="471" y1="54" x2="467" y2="58" stroke="#F9C929" stroke-width="2" />
+                  <line x1="509" y1="16" x2="513" y2="12" stroke="#F9C929" stroke-width="2" />
+                </g>
+                <g id="crop-rain" class="crop-part" opacity="0.3">
+                  <ellipse cx="60" cy="20" rx="18" ry="10" fill="#7EC8E3" />
+                  <ellipse cx="100" cy="15" rx="24" ry="12" fill="#7EC8E3" />
+                  <ellipse cx="145" cy="22" rx="16" ry="9" fill="#7EC8E3" />
+                  <line x1="70" y1="32" x2="65" y2="48" stroke="#7EC8E3" stroke-width="1.5" stroke-dasharray="2,3" />
+                  <line x1="95" y1="30" x2="90" y2="46" stroke="#7EC8E3" stroke-width="1.5" stroke-dasharray="2,3" />
+                  <line x1="115" y1="28" x2="110" y2="44" stroke="#7EC8E3" stroke-width="1.5" stroke-dasharray="2,3" />
+                  <line x1="135" y1="32" x2="130" y2="48" stroke="#7EC8E3" stroke-width="1.5" stroke-dasharray="2,3" />
+                </g>
+                <g id="crop-fruit" class="crop-part" opacity="0.35">
+                  <circle cx="330" cy="78" r="9" fill="#E74C3C" />
+                  <circle cx="352" cy="82" r="8" fill="#E74C3C" />
+                  <circle cx="370" cy="75" r="9" fill="#FF7043" />
+                  <circle cx="388" cy="80" r="8" fill="#E74C3C" />
+                  <line x1="330" y1="69" x2="330" y2="62" stroke="#2A5C1E" stroke-width="1.5" />
+                  <line x1="352" y1="74" x2="352" y2="67" stroke="#2A5C1E" stroke-width="1.5" />
+                  <line x1="370" y1="66" x2="370" y2="59" stroke="#2A5C1E" stroke-width="1.5" />
+                  <line x1="388" y1="72" x2="388" y2="65" stroke="#2A5C1E" stroke-width="1.5" />
+                </g>
+                <g id="crop-stem" class="crop-part" opacity="0.5">
+                  <line x1="280" y1="155" x2="280" y2="80" stroke="#5C8B3A" stroke-width="4" stroke-linecap="round" />
+                  <line x1="280" y1="130" x2="255" y2="115" stroke="#5C8B3A" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <line x1="280" y1="120" x2="305" y2="105" stroke="#5C8B3A" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <line x1="280" y1="110" x2="262" y2="96" stroke="#5C8B3A" stroke-width="2" stroke-linecap="round" />
+                  <line x1="280" y1="90" x2="280" y2="155" stroke="#1A3570" stroke-width="1" stroke-dasharray="3,4"
+                    opacity="0.5" />
+                </g>
+                <g id="crop-leaves" class="crop-part" opacity="0.4">
+                  <path d="M280,110 C255,95 225,100 220,120 C215,140 250,145 280,130 Z" fill="#3A8F2A" />
+                  <path d="M280,105 C305,88 340,92 342,112 C344,132 308,138 280,120 Z" fill="#3A8F2A" />
+                  <path d="M280,90 C262,78 242,82 240,96 C238,110 260,112 280,100 Z" fill="#4AAD38" />
+                  <path d="M280,86 C298,74 318,78 320,92 C322,106 300,108 280,95 Z" fill="#4AAD38" />
+                  <path d="M280,80 C268,70 255,73 254,82 C253,91 267,92 280,85 Z" fill="#5CC445" />
+                  <path d="M280,80 C292,70 305,73 306,82 C307,91 293,92 280,85 Z" fill="#5CC445" />
+                </g>
+                <g id="crop-flower" class="crop-part" opacity="0.35">
+                  <circle cx="280" cy="72" r="8" fill="#F9C929" />
+                  <ellipse cx="280" cy="60" rx="5" ry="8" fill="#F8A5C2" />
+                  <ellipse cx="280" cy="84" rx="5" ry="8" fill="#F8A5C2" />
+                  <ellipse cx="268" cy="72" rx="8" ry="5" fill="#F8A5C2" />
+                  <ellipse cx="292" cy="72" rx="8" ry="5" fill="#F8A5C2" />
+                  <circle cx="280" cy="72" r="5" fill="#F9C929" />
+                </g>
+                <g id="crop-soil" class="crop-part" opacity="0.5">
+                  <rect x="50" y="154" width="460" height="6" rx="2" fill="#5C4A28" />
+                  <rect x="50" y="158" width="460" height="4" rx="1" fill="#4A3A20" />
+                  <ellipse cx="120" cy="157" rx="15" ry="4" fill="#6B5530" />
+                  <ellipse cx="200" cy="157" rx="20" ry="4" fill="#6B5530" />
+                  <ellipse cx="360" cy="157" rx="18" ry="4" fill="#6B5530" />
+                  <ellipse cx="440" cy="157" rx="14" ry="4" fill="#6B5530" />
+                </g>
+                <g id="crop-roots" class="crop-part" opacity="0.35">
+                  <path d="M280,160 C280,175 278,185 275,195" stroke="#8B6520" stroke-width="3" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M279,168 C265,168 250,172 240,178" stroke="#8B6520" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M279,175 C295,175 310,180 320,186" stroke="#8B6520" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M278,182 C262,182 248,186 238,193" stroke="#8B6520" stroke-width="1.5" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M278,182 C294,183 308,188 318,195" stroke="#8B6520" stroke-width="1.5" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M240,178 C232,180 225,185 220,190" stroke="#8B6520" stroke-width="1" fill="none"
+                    stroke-linecap="round" />
+                  <path d="M320,186 C328,188 335,193 340,198" stroke="#8B6520" stroke-width="1" fill="none"
+                    stroke-linecap="round" />
+                  <circle cx="245" cy="185" r="2" fill="#1A3570" opacity="0.6" />
+                  <circle cx="315" cy="192" r="2" fill="#1A3570" opacity="0.6" />
+                </g>
+                <g id="crop-water" class="crop-part" opacity="0.3">
+                  <path d="M150,170 C170,168 190,172 210,169 C230,166 250,170 270,168" stroke="#00B4C5"
+                    stroke-width="1.5" fill="none" stroke-dasharray="4,3" />
+                  <path d="M290,170 C310,168 330,172 350,169 C370,166 390,170 410,168" stroke="#00B4C5"
+                    stroke-width="1.5" fill="none" stroke-dasharray="4,3" />
+                </g>
+                <g id="crop-shield" class="crop-part" opacity="0.3">
+                  <path
+                    d="M110,100 C110,88 118,82 120,80 C122,82 130,88 130,100 C130,110 120,116 120,116 C120,116 110,110 110,100 Z"
+                    fill="#C0392B" />
+                  <text x="120" y="103" font-size="8" fill="white" text-anchor="middle">✓</text>
+                </g>
+                <text id="crop-label" x="280" y="192" font-family="Darker Grotesque,sans-serif" font-size="9"
+                  fill="rgba(255,255,255,0.18)" text-anchor="middle" letter-spacing="2">CLICK A PILLAR TO HIGHLIGHT CROP
+                  STAGE</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Detail Panel -->
+        <div class="flywheel-right">
+          <div class="pillar-panel" id="pillar-panel">
+            <div class="pillar-placeholder" id="pillar-placeholder">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+              <p>Select any pillar segment or<br>click a name to explore<br>its science and products</p>
+            </div>
+            <div id="pillar-detail-content" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     LABS (Separate tab — split from UPCROP)
+════════════════════════════════════════════════════ -->
+  <div id="labs" class="section">
+    <!-- HERO BANNER -->
+    <div class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/fertilizer-analysis-lab.jpg');">
+      <div class="page-hero-content">
+        <div class="eyebrow-pill" style="margin: 0 auto 24px; border-color: rgba(255,255,255,0.3); color: var(--mint);">Research & Development</div>
+        <h2 style="font-family:'Raleway',sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; color: #fff; line-height: 1.1; margin-bottom: 20px;">
+          Our Laboratory Network
+        </h2>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 650px; margin: 0 auto;">
+          Four dedicated research centres across India — from biomarker validation to field trials — powering the biological intelligence behind every UPCROP® formulation.
+        </p>
+      </div>
+    </div>
+
+    <div class="labs-section" style="padding-top:50px">
+      <div class="labs-grid">
+        <div class="lab-tabs">
+          <button class="lab-tab active" onclick="showLab('chennai',this)"><span class="city">Chennai</span>Biomarker &
+            Microbiology</button>
+          <button class="lab-tab" onclick="showLab('noida',this)"><span class="city">Noida</span>Crop Physiology &
+            Product Development</button>
+          <button class="lab-tab" onclick="showLab('pune',this)"><span class="city">Pune</span>Field Research & Abiotic
+            Stress Studies</button>
+          <button class="lab-tab" onclick="showLab('hyderabad',this)"><span class="city">Hyderabad</span>Biotic Stress &
+            Microbiological Studies</button>
+        </div>
+        <div id="lab-content" class="lab-content">
+          <img src="img/fertilizer-analysis-lab.jpg" alt="Chennai Research Centre"
+            style="width:100%;height:200px;object-fit:cover;border-radius:2px;margin-bottom:20px;opacity:0.85;"
+            loading="lazy">
+          <div class="lab-tag">Biomarker Validation & Microbiology Centre</div>
+          <h3>Chennai Research Centre</h3>
+          <p>Our core analytical hub specializes in biomarker validation, phytochemical profiling, and microbiology —
+            identifying and verifying the marine algae functional components that power every UPCROP® formulation. This
+            centre anchors the quality intelligence of our entire product line.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="cert-section" style="padding-top:70px;border-top:1px solid rgba(255,255,255,0.07)">
+      <div class="section-eyebrow" style="color:var(--mint)">Quality & Compliance</div>
+      <h2
+        style="font-family:'Raleway',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--white);letter-spacing:-0.5px;margin-top:14px;">
+        Certifications & Organic Verification</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-badge">🏅</div>
+          <h5>ISO 9001:2015</h5>
+          <p>Quality management certification covering our full manufacturing, R&D, and supply chain processes.</p>
+          <div class="cert-scope">Manufacturing · R&D · Supply Chain</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">🌿</div>
+          <h5>NPOP</h5>
+          <p>Organic verification for the Indian market under the National Programme for Organic Production, Government
+            of India.</p>
+          <div class="cert-scope">Certifying Agency: Control Union · India Market</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">🇺🇸</div>
+          <h5>NOP</h5>
+          <p>USDA National Organic Programme verification — enabling our products for the US organic agriculture market.
+          </p>
+          <div class="cert-scope">Certifying Agency: Control Union · USA Market</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">🇪🇺</div>
+          <h5>EC Organic</h5>
+          <p>European Commission organic compliance verification — qualifying our formulations for EU organic
+            certification requirements.</p>
+          <div class="cert-scope">Certifying Agency: Control Union · Europe Market</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:rgba(255,255,255,0.28);margin-top:16px;font-style:italic;">Our Sivakasi
+        manufacturing unit holds all four certifications above, with additional GMP (Good Manufacturing Practice)
+        verification.</p>
+    </div>
+
+    <!-- SDGs -->
+    <div class="sdg-section">
+      <div class="section-eyebrow" style="color:var(--mint)">UN Sustainable Development Goals</div>
+      <h2
+        style="font-family:'Raleway',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--white);letter-spacing:-0.5px;margin-top:14px;">
+        How We Drive Sustainability</h2>
+      <p class="sdg-intro">Every Trishul Biotech formulation is a step toward a more sustainable agricultural future.
+        Our science, manufacturing, and supply model is built in direct alignment with the United Nations' 2030
+        Sustainable Development Goals.</p>
+      <div class="sdg-grid">
+        <div class="sdg-card">
+          <div class="sdg-num">02</div>
+          <div class="sdg-text">
+            <h6>Zero Hunger</h6>
+            <p>Marine algae biostimulants improve crop yield, quality, and resilience — helping farmers produce more,
+              consistently, with fewer inputs.</p>
+          </div>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">12</div>
+          <div class="sdg-text">
+            <h6>Responsible Consumption</h6>
+            <p>Zero water discharge, zero solid waste manufacturing and FCO-grade organic fertilizers reduce
+              agriculture's environmental footprint.</p>
+          </div>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">13</div>
+          <div class="sdg-text">
+            <h6>Climate Action</h6>
+            <p>Our Stressilient pillar directly addresses abiotic stress — equipping crops to withstand climate-driven
+              drought, heat, and salinity.</p>
+          </div>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">14</div>
+          <div class="sdg-text">
+            <h6>Life Below Water</h6>
+            <p>We partner with responsible marine algae cultivation communities, supporting sustainable coastal
+              livelihoods and healthy ocean ecosystems.</p>
+          </div>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">15</div>
+          <div class="sdg-text">
+            <h6>Life on Land</h6>
+            <p>Biological alternatives to synthetic agrochemicals protect soil microbiome health, biodiversity, and
+              long-term land productivity.</p>
+          </div>
+        </div>
+        <div class="sdg-card">
+          <div class="sdg-num">17</div>
+          <div class="sdg-text">
+            <h6>Partnerships for Goals</h6>
+            <p>Global certifications (NPOP, NOP, EC) and multi-country reach build cross-border partnerships that
+              advance sustainable agriculture worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     PRODUCT PORTFOLIO
+════════════════════════════════════════════════════ -->
+  <div id="india" class="section">
+    <!-- HERO BANNER -->
+    <div class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/trishul-biotech-biostimulants.jpg');">
+      <div class="page-hero-content">
+        <div class="eyebrow-pill" style="margin: 0 auto 24px; border-color: rgba(255,255,255,0.3); color: var(--mint);">Product Portfolio</div>
+        <h2 style="font-family:'Raleway',sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 600; color: #fff; line-height: 1.1; margin-bottom: 20px;">
+          Indian & Global Market Products
+        </h2>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 650px; margin: 0 auto;">
+          Science-led biological inputs for every crop stage. Discover our FCO registered biostimulants, organic potash, and B2B global solutions.
+        </p>
+      </div>
+    </div>
+    
+    <div class="india-section" style="padding-top: 60px;">
+
+      <div class="portfolio-tabs">
+        <button class="port-tab active" onclick="showIndia('gazette',this)">Gazette Biostimulants</button>
+        <button class="port-tab" onclick="showIndia('pdr',this)">Organic Fertilizer</button>
+        <button class="port-tab" onclick="showIndia('b2b',this)">Technical / B2B</button>
+        <button class="port-tab" onclick="showIndia('global',this)">Global Products</button>
+      </div>
+
+      <!-- GAZETTE -->
+      <div id="india-gazette" class="port-content active">
+        <div class="gazette-notice">
+          <div class="gazette-notice-title">📋 Official Gazette Notification</div>
+          <div class="gazette-notice-body">
+            Products approved under <strong>FCO, Schedule VI</strong>, Gazette Notification <strong>S.O. 2346(E), dated
+              26th May 2025</strong>.<br>
+            Part A, Sub-heading (ii) — Seaweed Extract, <strong>Item 8</strong> &nbsp;|&nbsp;
+            Sub-heading (4) — Mixed Formulation of Biostimulants, <strong>Items (5), (6) and (7)</strong>
+          </div>
+        </div>
+        <div class="port-content-inner">
+          <div>
+            <h3>Gazette Biostimulants</h3>
+            <div class="pc-sub">Government Approved · FCO Registered · Schedule VI</div>
+            <p>Marine algae biostimulants registered under the official Indian Gazette — includes not only pure Marine
+              algae liquid, also we deliver products combining the potency of <em>Kappaphycus alvarezii</em> and
+              <em>Sargassum swartzii</em> with Humic acid (Source: Leonardite) for broad-spectrum crop enhancement.
+            </p>
+          </div>
+          <ul class="product-list">
+            <li onclick="openModal('seamix')">
+              <div class="prod-dot" style="background:#C0392B"></div>
+              <div><strong>UPC Seamix Pro</strong><span class="sub">Seaweed Liquid</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('humi-l')">
+              <div class="prod-dot" style="background:#27AE60"></div>
+              <div><strong>UPC Humi Sea L</strong><span class="sub">Humic + Seaweed Liquid</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('humi-p')">
+              <div class="prod-dot" style="background:#C2185B"></div>
+              <div><strong>UPC Humi Sea P</strong><span class="sub">Humic + Seaweed Powder</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('humi-g')">
+              <div class="prod-dot" style="background:#1B5E20"></div>
+              <div><strong>UPC Humi Sea G</strong><span class="sub">Humic + Seaweed Granules</span></div><span
+                class="p-arrow">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PDR -->
+      <div id="india-pdr" class="port-content">
+        <div class="port-content-inner">
+          <div>
+            <h3>PDR Series</h3>
+            <div class="pc-sub">Potash Derived from Rhodophytes · Bio-Potash</div>
+            <p><strong>PDR</strong> stands for <em>Potash Derived from Rhodophytes</em> — an FCO Grade Organic
+              Fertilizer sourced from red marine algae (<em>Kappaphycus</em> — Rhodophyta). Water-soluble powder
+              delivering bioavailable potassium with certified organic quality for sustainable crop nutrition.</p>
+          </div>
+          <ul class="product-list">
+            <li onclick="openModal('rk20')">
+              <div class="prod-dot" style="background:#AAC32D"></div>
+              <div><strong>UPC RK20</strong><span class="sub">PDR <span class="grade-tag">Grade 1</span> — K&gt;30%,
+                  S≥2.5%</span></div><span class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('shatabdi')">
+              <div class="prod-dot" style="background:#D4500A"></div>
+              <div><strong>Seetang Shatabdi</strong><span class="sub">PDR <span class="grade-tag">Grade 2</span> —
+                  K&gt;25%, S≥2.5%</span></div><span class="p-arrow">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- B2B -->
+      <div id="india-b2b" class="port-content">
+        <div class="port-content-inner">
+          <div>
+            <h3>Technical / B2B</h3>
+            <div class="pc-sub">Bulk & Industrial Supply</div>
+            <p>High-purity marine algae extracts and raw materials supplied in bulk to agrochemical manufacturers,
+              biostimulant formulators, and research institutions. Certified quality with complete traceability from
+              marine harvest to final delivery.</p>
+          </div>
+          <ul class="product-list">
+            <li onclick="openModal('hs60')">
+              <div class="prod-dot" style="background:#0A1A4A"></div>
+              <div><strong>UPC HS60</strong><span class="sub">WSP for Humi Sea L formulation (10× strength)</span></div>
+              <span class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('sp4g')">
+              <div class="prod-dot" style="background:#0A2A0A"></div>
+              <div><strong>UPC SP4G</strong><span class="sub">Premix for Humi Sea G formulation (23× strength)</span>
+              </div><span class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('bp15x')">
+              <div class="prod-dot" style="background:#3A3A3A"></div>
+              <div><strong>UPC BP15X</strong><span class="sub">Black WSP · 15% seaweed bioactive</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('bp15x2')">
+              <div class="prod-dot" style="background:#0D0D0D"></div>
+              <div><strong>UPC BP15X2</strong><span class="sub">Black WSP · 30% seaweed bioactive</span></div><span
+                class="p-arrow">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GLOBAL -->
+      <div id="india-global" class="port-content">
+        <div class="port-content-inner">
+          <div>
+            <h3>Global Products</h3>
+            <div class="pc-sub">UPCROP® International Range</div>
+            <p>Our UPCROP® global line meets international regulatory and efficacy standards, formulated for export
+              markets across Europe, South-East Asia, and the Americas. Each product is aligned to one of our seven
+              innovation pillars.</p>
+          </div>
+          <ul class="product-list">
+            <li onclick="openModal('pb261')">
+              <div class="prod-dot" style="background:#2A5C1E"></div>
+              <div><strong>UPC PB 261 L</strong><span class="sub">PhytoBoost — Pillar 2 · Liquid</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('pb201')">
+              <div class="prod-dot" style="background:#3A7A28"></div>
+              <div><strong>UPC PB 201 P</strong><span class="sub">PhytoBoost — Pillar 2 · Powder</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('ns501')">
+              <div class="prod-dot" style="background:#1A3570"></div>
+              <div><strong>UPC NS 501 P</strong><span class="sub">NutriSpike — Pillar 5 · Powder</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('st351')">
+              <div class="prod-dot" style="background:#7A3D10"></div>
+              <div><strong>UPC ST 351 L</strong><span class="sub">Stressilient — Pillar 3 · Liquid</span></div><span
+                class="p-arrow">→</span>
+            </li>
+            <li onclick="openModal('qg451')">
+              <div class="prod-dot" style="background:#4A1A6E"></div>
+              <div><strong>UPC QG 451 L</strong><span class="sub">QualiGain — Pillar 4 · Liquid</span></div><span
+                class="p-arrow">→</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     GALLERY & RESOURCES
+════════════════════════════════════════════════════ -->
+  <div id="gallery" class="section">
+    <div class="gallery-section">
+      <div class="section-eyebrow">Resources & Downloads</div>
+      <h2 class="section-title reveal">Brochures, Datasheets & Field Resources</h2>
+      <div class="gallery-grid">
+        <div class="gallery-card reveal">
+          <div class="gallery-icon">📋</div>
+          <h4>Product Brochure — Gazette Range</h4>
+          <p>Complete product brochure covering our FCO Gazette-registered biostimulant range including Seamix Pro and
+            Humi Sea series — with specifications, dosing, and application guides.</p>
+          <a class="dl-btn" href="#">Download PDF</a>
+        </div>
+        <div class="gallery-card reveal reveal-delay-1">
+          <div class="gallery-icon">🌿</div>
+          <h4>UPCROP® Global System Overview</h4>
+          <p>Technical overview of the UPCROP® Seven Pillar System — covering marine algae biotechnology,
+            pillar-by-pillar crop stage alignment, bioactive profiles, and formulation science.</p>
+          <a class="dl-btn" href="#">Download PDF</a>
+        </div>
+        <div class="gallery-card reveal reveal-delay-2">
+          <div class="gallery-icon">🔬</div>
+          <h4>Technical Datasheets — B2B Range</h4>
+          <p>Complete technical specifications for HS60, SP4G, BP15X and BP15X2 — including bioactive concentrations,
+            solubility, Certificate of Analysis format, and supply terms.</p>
+          <a class="dl-btn dl-btn-outline" href="#">Request Datasheet</a>
+        </div>
+        <div class="gallery-card reveal">
+          <div class="gallery-icon">📊</div>
+          <h4>PDR Series Technical Brief</h4>
+          <p>Technical documentation covering Potash Derived from Rhodophytes — FCO grade specifications, K₂O
+            concentrations, sulphur content, and agroclimatic application guidance.</p>
+          <a class="dl-btn dl-btn-outline" href="#">Request Brief</a>
+        </div>
+        <div class="gallery-card reveal reveal-delay-1">
+          <div class="gallery-icon">🌍</div>
+          <h4>Organic Certification Documents</h4>
+          <p>Control Union certificates for NPOP (India), NOP (USA), and EC Organic (Europe) — available for distributor
+            and retail partner qualification processes.</p>
+          <a class="dl-btn dl-btn-outline" href="#">Request Certificates</a>
+        </div>
+        <div class="gallery-card reveal reveal-delay-2">
+          <div class="gallery-icon">🏭</div>
+          <h4>Manufacturing & Quality Profile</h4>
+          <p>Overview of our Sivakasi manufacturing facility — GMP certification, ISO 9001:2015 scope, zero discharge
+            manufacturing model, and supply chain quality controls.</p>
+          <a class="dl-btn dl-btn-outline" href="#">Request Profile</a>
+        </div>
+      </div>
+      <div
+        style="font-size:0.82rem;color:var(--gray-500);margin-top:44px;padding:18px 22px;background:var(--gray-100);border-left:2px solid var(--gold);line-height:1.7;">
+        All downloadable materials are available for registered trade partners, distributors, and research institutions.
+        For full technical documentation packages or custom presentation material, please contact our team directly.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════════ -->
+  <div id="contact" class="section">
+    <div class="contact-section" style="position:relative;">
+      <div
+        style="position:absolute;inset:0;background-image:url('img/contact-sec1-bg.jpg');background-size:cover;background-position:center;opacity:0.1;pointer-events:none;z-index:0;">
+      </div>
+      <div class="contact-left" style="position:relative;z-index:1;">
+        <div class="section-eyebrow" style="color:var(--mint)">Get In Touch</div>
+        <h2>Ready to Bring Marine Intelligence to Your Crops?</h2>
+        <p>Whether you are a distributor, retail partner, farmer, or international buyer — we would like to hear from
+          you. Our team is ready to discuss your specific requirements and match you with the right product from our
+          range.</p>
+        <div class="contact-info">
+          <div>
+            <span class="ci-label">Corporate Office</span>
+            <div class="ci-val">Trishul Biotech<br>Sivakasi, Tamil Nadu, India</div>
+          </div>
+          <div>
+            <span class="ci-label">Manufacturing</span>
+            <div class="ci-val">Sivakasi, Tamil Nadu, India<br>GMP · ISO 9001:2015 Certified</div>
+          </div>
+          <div>
+            <span class="ci-label">Marketing Office</span>
+            <div class="ci-val">TICEL Biopark, Taramani<br>Chennai, Tamil Nadu, India</div>
+          </div>
+          <div>
+            <span class="ci-label">Certifications</span>
+            <div class="ci-val">NPOP · NOP (USDA) · EC Organic (Control Union)<br>ISO 9001:2015 · FCO Gazette Registered
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form" style="position:relative;z-index:1;">
+        <form id="contact-form" action="https://crm.zoho.com/crm/WebToLeadForm" method="POST"
+          onsubmit="return handleFormSubmit(event)">
+          <input type="hidden" name="xnQsjsdp" value="[REPLACE_WITH_ZOHO_FORM_KEY]">
+          <input type="hidden" name="zc_gad" id="zc_gad" value="">
+          <input type="hidden" name="xmIwtLD" value="[REPLACE_WITH_ZOHO_FORM_ID]">
+          <input type="hidden" name="actionType" value="TGVhZHM=">
+          <input type="hidden" name="returnURL" value="index.html">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="cf-fname" name="First_Name" placeholder="Your first name">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="cf-lname" name="Last_Name" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company / Farm Name</label>
+            <input type="text" id="cf-company" name="Company" placeholder="Organisation or farm name">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="cf-email" name="Email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cf-phone" name="Mobile" placeholder="+91 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Enquiry Type</label>
+            <select id="cf-enquiry" name="Lead_Source">
+              <option value="">Select enquiry type</option>
+              <option>Product Inquiry — Indian Market</option>
+              <option>Product Inquiry — Global / Export</option>
+              <option>Distributor / Dealer Partnership</option>
+              <option>B2B Supplier</option>
+              <option>Agri Input Company</option>
+              <option>B2B / Technical Raw Materials</option>
+              <option>Research Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="cf-message" name="Description"
+              placeholder="Tell us about your requirements, crops, region, or any specific questions..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry →</button>
+          <div class="form-success" id="form-success">✓ Your enquiry has been sent. We'll be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-enhanced">
+    <div class="footer-inner">
+      <!-- CTA Row -->
+      <div class="footer-cta-row">
+        <h2>Ready to Transform Your Farm With Trishul Biotech?</h2>
+        <button class="footer-cta-btn" onclick="navTo('contact',event)">Partner With Us →</button>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Main 4 Columns -->
+      <div class="footer-main-row">
+        <div class="footer-col-brand">
+          <div class="footer-logo-wrap">
+            <img src="img/trishul-biotech-logo.svg" class="footer-logo-img" alt="Trishul Biotech">
+          </div>
+        </div>
+
+        <div class="footer-col-links">
+          <h4 class="footer-col-title">Links</h4>
+          <ul>
+            <li><a href="#" onclick="navTo('india',event)">Products</a></li>
+            <li><a href="#" onclick="navTo('tech',event)">UPCROP® System</a></li>
+            <li><a href="#" onclick="navTo('labs',event)">Our Labs</a></li>
+            <li><a href="#" onclick="navTo('gallery',event)">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-socials">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/trishul-biotech/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/trishulbiotech" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/trishulbiotech_" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-newsletter">
+          <h4 class="footer-col-title">Subscribe Newsletter</h4>
+          <p>Sign up to get updates & news.</p>
+          <div class="footer-newsletter-form">
+            <input type="email" placeholder="email@trishul.com" id="footer-email">
+            <button type="button" onclick="handleNewsletterSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Contact Info Row -->
+      <div class="footer-contact-row">
+        <a href="tel:+919819052944" class="fc-info-item" style="text-decoration: none;">
+          <div class="fc-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+              </path>
+            </svg>
+          </div>
+          <div class="fc-text">
+            <div class="fc-label">Phone No:</div>
+            <div class="fc-val">+91 98190 52944</div>
+          </div>
+        </a>
+        <a href="mailto:info@trishulbiotech.com" class="fc-info-item" style="text-decoration: none;">
+          <div class="fc-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+          </div>
+          <div class="fc-text">
+            <div class="fc-label">Email Address:</div>
+            <div class="fc-val">info@trishulbiotech.com</div>
+          </div>
+        </a>
+        <a href="https://maps.google.com/?q=Sivakasi,+Tamil+Nadu,+India" target="_blank" class="fc-info-item"
+          style="text-decoration: none;">
+          <div class="fc-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div class="fc-text">
+            <div class="fc-label">Location:</div>
+            <div class="fc-val">Sivakasi, Tamil Nadu, India</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Bottom Copyright Row -->
+      <div class="footer-bottom-row">
+        <div class="fb-left">© All rights reserved by Trishul.</div>
+        <div class="fb-right">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP + BACK TO TOP -->
+  <button class="whatsapp-float" id="whatsapp-float" onclick="openWA()" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </button>
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <div class="modal-sku" id="modal-sku"></div>
+          <div class="modal-pillar-tag" id="modal-pillar-tag"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="modal-mockup" id="modal-mockup"></div>
+          <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
