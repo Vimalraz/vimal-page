@@ -1,2 +1,12 @@
 # ignore old website folder always
 /old-website/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# dependencies
+node_modules/

@@ -1,0 +1,11 @@
+node_modules/
+.git/
+.wrangler/
+.claude/
+old-website/
+package.json
+package-lock.json
+README.md
+wrangler.jsonc
+.gitignore
+.assetsignore
