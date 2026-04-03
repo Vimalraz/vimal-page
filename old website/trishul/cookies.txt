@@ -1,5 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.trishulbiotech.com	TRUE	/	FALSE	1999999999	__cf_bm	sedkQSn94kF1MttiEDIgP6JWZh4blF7Ti6cdWSGc1P0-1774076856-1.0.1.1-fVQ0nUMydMvvFy5h6toPH1M0TeEa2lIjo9gpbCBHKEH3jHhDFYrz33gKzNyCFZyC0Cd4CQ83kmLZ52C7GAOTwHs3uMNlQ6x6XQdXdDda2I0
-trishulbiotech.com	TRUE	/	FALSE	1999999999	SameSite	None
-
