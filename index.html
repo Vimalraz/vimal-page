@@ -100,128 +100,90 @@
     </div>
 
 
-    <!-- FEATURES SHOWCASE -->
-    <!-- PILLAR WHEEL — Why Trishul Biotech -->
-    <div class="pillar-wheel-section">
-      <div class="pw-inner">
-        <div class="pw-section-label">Why Trishul Biotech</div>
-        <div class="pw-layout">
-          <!-- Wheel -->
-          <div class="pw-wheel-container">
-            <div class="pw-wheel">
-              <!-- Ring SVG -->
-              <svg class="pw-ring" viewBox="0 0 400 400" fill="none">
-                <circle cx="200" cy="200" r="170" stroke="rgba(46,139,87,0.15)" stroke-width="2" />
-                <circle cx="200" cy="200" r="170" stroke="var(--forest)" stroke-width="2" stroke-dasharray="16 8"
-                  opacity="0.3" />
-              </svg>
-              <!-- Center image -->
-              <div class="pw-center">
-                <img class="pw-center-img active" src="img/agricultural-research-and-development-center.jpg"
-                  alt="Multi-Centre R&D">
-                <img class="pw-center-img" src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing">
-                <img class="pw-center-img" src="img/bio-stimulant.jpg" alt="Biological Portfolio">
-                <img class="pw-center-img" src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach">
-              </div>
-              <!-- Nodes at cardinal positions -->
-              <button class="pw-node active" data-index="0" onclick="pwSelect(0)" aria-label="Multi-Centre R&D"
-                style="top:0;left:50%;transform:translate(-50%,-50%)">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                  <path d="M11 8v6M8 11h6" />
-                </svg>
-                <span>R&amp;D</span>
-              </button>
-              <button class="pw-node" data-index="1" onclick="pwSelect(1)" aria-label="Own Manufacturing"
-                style="top:50%;right:0;transform:translate(50%,-50%)">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 20h20M4 20V10l4-4 4 4v10M16 20V6l4-2v16" />
-                  <path d="M9 12h2M9 16h2" />
-                </svg>
-                <span>Manufacturing</span>
-              </button>
-              <button class="pw-node" data-index="2" onclick="pwSelect(2)" aria-label="Biological Portfolio"
-                style="bottom:0;left:50%;transform:translate(-50%,50%)">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10" />
-                  <path d="M17 8c2 2 3 5 3 8" />
-                  <path d="M7 15c1.5-2 4-4 7-4" />
-                  <path d="M12 2v4M12 18v4" />
-                </svg>
-                <span>Bio Portfolio</span>
-              </button>
-              <button class="pw-node" data-index="3" onclick="pwSelect(3)" aria-label="Pan-India Reach"
-                style="top:50%;left:0;transform:translate(-50%,-50%)">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Pan-India</span>
-              </button>
+    <!-- WHY TRISHUL — section label sits above the card -->
+    <div class="why-section-label-row">
+      <span class="why-eyebrow">Why Trishul Biotech</span>
+    </div>
+
+    <!-- Card matches hero margins -->
+    <div class="why-outer-card" id="why-trishul">
+      <div class="why-split-section">
+
+        <!-- LEFT: sticky text panel (no eyebrow here) -->
+        <div class="why-sticky-left">
+
+          <div class="why-text-panel active" data-slide="0">
+            <div class="why-tag">Multi-Centre R&amp;D</div>
+            <h2 class="why-heading">Science validated<br>across every zone.</h2>
+            <p class="why-desc">4 labs across India — from biomarker discovery to field validation. Our multi-centre science ensures results are consistent across India's diverse agro-climatic zones.</p>
+            <div class="why-meta">
+              <span class="why-meta-pill">Noida · Pune · Hyderabad · Chennai</span>
             </div>
           </div>
-          <!-- Text panel -->
-          <div class="pw-text-panel">
-            <div class="pw-text active" data-index="0">
-              <h3>Multi-Centre R&amp;D</h3>
-              <p>4 labs across India — from biomarker discovery to field validation. Our multi-centre science ensures
-                results are consistent across India's diverse agro-climatic zones.</p>
-            </div>
-            <div class="pw-text" data-index="1">
-              <h3>Own Manufacturing</h3>
-              <p>GMP + ISO facility in Sivakasi — complete supply chain control from raw material to finished product.
-                No outsourcing. Consistent quality, every batch.</p>
-            </div>
-            <div class="pw-text" data-index="2">
-              <h3>Biological Portfolio</h3>
-              <p>Marine algae biologicals as our anchor — with a growing range of bio-stimulants, bio-fertilizers, and
-                crop protection inputs across every crop stage.</p>
-            </div>
-            <div class="pw-text" data-index="3">
-              <h3>Pan-India Reach</h3>
-              <p>Warehouses &amp; distribution across all major crop-growing hubs in India — bringing science-backed
-                biological inputs directly to farmers and agri-retailers.</p>
+
+          <div class="why-text-panel" data-slide="1">
+            <div class="why-tag">Own Manufacturing</div>
+            <h2 class="why-heading">GMP + ISO facility.<br>Zero outsourcing.</h2>
+            <p class="why-desc">Complete supply chain control from raw material to finished product at our Sivakasi facility — certified to GMP and ISO 9001:2015. Consistent quality, every batch.</p>
+            <div class="why-meta">
+              <span class="why-meta-pill">Sivakasi, Tamil Nadu</span>
+              <span class="why-meta-pill">ISO 9001:2015</span>
             </div>
           </div>
+
+          <div class="why-text-panel" data-slide="2">
+            <div class="why-tag">Biological Portfolio</div>
+            <h2 class="why-heading">Marine-anchored.<br>Full crop lifecycle.</h2>
+            <p class="why-desc">Marine algae biologicals as our anchor, with a growing range of bio-stimulants, bio-fertilizers, and crop protection inputs covering every stage of the crop cycle.</p>
+            <div class="why-meta">
+              <span class="why-meta-pill">7 Innovation Pillars</span>
+              <span class="why-meta-pill">FCO Registered</span>
+            </div>
+          </div>
+
+          <div class="why-text-panel" data-slide="3">
+            <div class="why-tag">Pan-India Reach</div>
+            <h2 class="why-heading">Farm-to-shelf.<br>Nationwide.</h2>
+            <p class="why-desc">Warehouses and distribution across all major crop-growing hubs — bringing science-backed biological inputs directly to farmers and agri-retailers at scale.</p>
+            <div class="why-meta">
+              <span class="why-meta-pill">All major agri states</span>
+            </div>
+          </div>
+
+          <!-- Progress indicators -->
+          <div class="why-progress">
+            <button class="why-dot active" data-target="0" aria-label="Slide 1"></button>
+            <button class="why-dot" data-target="1" aria-label="Slide 2"></button>
+            <button class="why-dot" data-target="2" aria-label="Slide 3"></button>
+            <button class="why-dot" data-target="3" aria-label="Slide 4"></button>
+          </div>
         </div>
-        <!-- Mobile accordion fallback -->
-        <div class="pw-mobile-fallback">
-          <details class="pw-accordion" open>
-            <summary>Multi-Centre R&amp;D</summary>
-            <div class="pw-acc-body">
-              <img src="img/agricultural-research-and-development-center.jpg" alt="R&D" loading="lazy">
-              <p>4 labs across India — from biomarker discovery to field validation. Our multi-centre science ensures
-                results are consistent across India's diverse agro-climatic zones.</p>
-            </div>
-          </details>
-          <details class="pw-accordion">
-            <summary>Own Manufacturing</summary>
-            <div class="pw-acc-body">
-              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Manufacturing" loading="lazy">
-              <p>GMP + ISO facility in Sivakasi — complete supply chain control from raw material to finished product.
-                No outsourcing. Consistent quality, every batch.</p>
-            </div>
-          </details>
-          <details class="pw-accordion">
-            <summary>Biological Portfolio</summary>
-            <div class="pw-acc-body">
-              <img src="img/bio-stimulant.jpg" alt="Bio Portfolio" loading="lazy">
-              <p>Marine algae biologicals as our anchor — with a growing range of bio-stimulants, bio-fertilizers, and
-                crop protection inputs across every crop stage.</p>
-            </div>
-          </details>
-          <details class="pw-accordion">
-            <summary>Pan-India Reach</summary>
-            <div class="pw-acc-body">
-              <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India" loading="lazy">
-              <p>Warehouses &amp; distribution across all major crop-growing hubs in India — bringing science-backed
-                biological inputs directly to farmers and agri-retailers.</p>
-            </div>
-          </details>
+
+        <!-- RIGHT: scrollable image stack -->
+        <div class="why-scroll-right">
+          <div class="why-image-item" data-index="0">
+            <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
+            <div class="why-image-label">Multi-Centre R&amp;D</div>
+          </div>
+          <div class="why-image-item" data-index="1">
+            <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
+            <div class="why-image-label">Own Manufacturing</div>
+          </div>
+          <div class="why-image-item" data-index="2">
+            <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
+            <div class="why-image-label">Biological Portfolio</div>
+          </div>
+          <div class="why-image-item" data-index="3">
+            <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
+            <div class="why-image-label">Pan-India Reach</div>
+          </div>
         </div>
+
       </div>
     </div>
+
+
+
 
     <!-- TRUST STRIP — rounded rect icon bar, placed after pillar wheel -->
     <div class="trust-strip reveal" id="features-strip">
@@ -1420,6 +1382,47 @@
       window.addEventListener('resize', syncSize);
       window.addEventListener('load', syncSize);
       draw();
+    })();
+
+
+    /* ─── WHY TRISHUL — scroll-driven left/right sync ─── */
+    (function () {
+      var imageItems = document.querySelectorAll('.why-image-item');
+      var textPanels = document.querySelectorAll('.why-text-panel');
+      var dots       = document.querySelectorAll('.why-dot');
+
+      function activate(idx) {
+        textPanels.forEach(function(p) { p.classList.remove('active'); });
+        dots.forEach(function(d) { d.classList.remove('active'); });
+        var panel = document.querySelector('.why-text-panel[data-slide="' + idx + '"]');
+        var dot   = document.querySelector('.why-dot[data-target="' + idx + '"]');
+        if (panel) panel.classList.add('active');
+        if (dot)   dot.classList.add('active');
+      }
+
+      /* IntersectionObserver: fire when image ≥40% in viewport */
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            activate(parseInt(entry.target.dataset.index, 10));
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, { threshold: 0.4 });
+
+      imageItems.forEach(function(item) { io.observe(item); });
+
+      /* Dot click → scroll to matching image */
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var idx = parseInt(dot.dataset.target, 10);
+          if (imageItems[idx]) {
+            imageItems[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
     })();
 
 
