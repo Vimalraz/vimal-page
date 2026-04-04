@@ -1,57 +1,14 @@
-/* ─── FEATURES CARD ACCORDION ─── */
-const FC_DURATION = 6000;
-let _fcTimer    = null;   /* setTimeout or setInterval handle */
-let _fcStartTime = 0;     /* when current item started (ms) */
-let _fcPauseStart = 0;    /* when hover-pause began */
-let _fcPausedMs  = 0;     /* total ms spent paused during current item */
-
-function fcSelect(idx) {
-  /* expand the chosen one using clean flexbox css styling */
-  document.querySelectorAll('.fc-item').forEach((item, i) => {
-    if (i === idx) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
-
-  /* swap images */
-  document.querySelectorAll('.fc-img').forEach((el, i) => el.classList.toggle('active', i === idx));
-
-  /* restart progress bars — animate only the divider after the active item */
-  document.querySelectorAll('.fc-progress').forEach((p, i) => {
-    p.style.animation = 'none';
-    p.offsetWidth; /* force reflow so animation truly restarts */
-    p.style.animationPlayState = 'running';
-    p.style.animation = (i === idx) ? `fcProgress ${FC_DURATION}ms linear forwards` : 'none';
-  });
-
-  _fcStartTime = Date.now();
-  _fcPausedMs  = 0;
-}
-
-function _fcNext() {
-  const items = document.querySelectorAll('.fc-item');
-  let cur = 0;
-  items.forEach((el, i) => { if (el.classList.contains('active')) cur = i; });
-  fcSelect((cur + 1) % items.length);
-}
-
-function _fcSchedule(delay) {
-  clearTimeout(_fcTimer);
-  clearInterval(_fcTimer);
-  _fcTimer = setTimeout(() => {
-    _fcNext();
-    _fcTimer = setInterval(_fcNext, FC_DURATION);
-  }, delay);
+/* ─── PILLAR WHEEL ─── */
+function pwSelect(idx) {
+  document.querySelectorAll('.pw-node').forEach((el, i) => el.classList.toggle('active', i === idx));
+  document.querySelectorAll('.pw-center-img').forEach((el, i) => el.classList.toggle('active', i === idx));
+  document.querySelectorAll('.pw-text').forEach((el, i) => el.classList.toggle('active', i === idx));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const card = document.querySelector('.features-card');
-  if (!card) return;
-
-  fcSelect(0);
-  _fcSchedule(FC_DURATION);
+  const wheel = document.querySelector('.pw-wheel');
+  if (!wheel) return;
+  pwSelect(0);
 });
 
 /* ─── WHATSAPP ─── */
@@ -71,8 +28,7 @@ function openWA(){
 }
 
 /* ─── NAVIGATION ─── */
-/* pages with a light/white background — nav starts dark */
-const lightBgPages = ['india','gallery'];
+/* pages array removed — header now uses white-on-scroll universally */
 
 function navTo(id,e){
   if(e)e.preventDefault();
@@ -86,8 +42,7 @@ function navTo(id,e){
   const hdr=document.getElementById('main-header');
   if(hdr){
     hdr.classList.remove('scrolled'); /* reset — we're back at top */
-    if(lightBgPages.includes(id)) hdr.classList.add('light-page');
-    else hdr.classList.remove('light-page');
+    hdr.classList.remove('light-page');
   }
   _currentSection = id;
   observeReveal();
@@ -104,6 +59,38 @@ function observeReveal(){
   });
 }
 window.addEventListener('load',observeReveal);
+
+/* ─── STATS COUNTER ANIMATION ─── */
+function initStatCounters(){
+  const strip = document.getElementById('features-strip');
+  if(!strip) return;
+  let fired = false;
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !fired){
+        fired = true;
+        const nums = strip.querySelectorAll('.stat-item-num');
+        nums.forEach(el=>{
+          const target = parseInt(el.textContent);
+          if(!isNaN(target)){
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 30));
+            const interval = setInterval(()=>{
+              current += step;
+              if(current >= target){ current = target; clearInterval(interval); }
+              el.textContent = current;
+            }, 50);
+          } else {
+            el.style.animation = 'statCountIn 0.6s ease both';
+          }
+        });
+        obs.disconnect();
+      }
+    });
+  },{threshold:0.3});
+  obs.observe(strip);
+}
+window.addEventListener('load', initStatCounters);
 
 /* ─── LAB TABS ─── */
 const labContent={
@@ -128,71 +115,56 @@ function showIndia(key,btn){
   if(el)el.classList.add('active');
 }
 
-/* ─── FLYWHEEL PILLAR SELECTION ─── */
-const allCropParts=['crop-sun','crop-rain','crop-fruit','crop-stem','crop-leaves','crop-flower','crop-soil','crop-roots','crop-water','crop-shield'];
-const pillarCropMap={raiz:['crop-roots','crop-soil'],phyto:['crop-leaves','crop-stem'],nutri:['crop-stem','crop-water'],stress:['crop-rain','crop-shield','crop-leaves'],quali:['crop-fruit','crop-flower','crop-sun'],bioguard:['crop-shield'],bioflow:['crop-leaves','crop-stem','crop-rain']};
+/* ─── BIOLOGICAL JOURNEY ─── */
+function initJourney(){
+  const journeySection = document.getElementById('upcrop-journey');
+  if(!journeySection) return;
 
-function hoverPillar(key){
-  const active=allCropParts;
-  const lit=pillarCropMap[key]||[];
-  active.forEach(id=>{
-    const el=document.getElementById(id);
-    if(!el)return;
-    if(lit.includes(id)){el.classList.add('highlighted');el.classList.remove('dimmed');}
-    else{el.classList.add('dimmed');el.classList.remove('highlighted');}
-  });
-  const lbl=document.getElementById('crop-label');
-  if(lbl)lbl.setAttribute('fill','transparent');
-  document.querySelectorAll('.p-label').forEach(l=>l.classList.remove('active-label'));
-  const activeLbl=document.getElementById('lbl-'+key);
-  if(activeLbl)activeLbl.classList.add('active-label');
-}
-function unhoverPillar(){
-  allCropParts.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el){el.classList.remove('highlighted','dimmed');}
-  });
-  const lbl=document.getElementById('crop-label');
-  if(lbl)lbl.setAttribute('fill','rgba(255,255,255,0.18)');
-  document.querySelectorAll('.p-label').forEach(l=>l.classList.remove('active-label'));
-}
+  /* Scroll-driven path draw */
+  const pathEl = document.getElementById('journey-path');
+  if(pathEl){
+    const totalLen = pathEl.getTotalLength();
+    pathEl.style.strokeDasharray = totalLen;
+    pathEl.style.strokeDashoffset = totalLen;
 
-const pillarData={
-  raiz:{color:'#6B4423',label:'Pillar 01 — RaizUp',name:'RaizUp',tagline:'Root Architecture & Seedling Vigour',objective:"The crop begins its story underground. RaizUp is designed to win the establishment battle — ensuring every seed develops the root density and lateral architecture that determines how well the plant can feed, anchor, and ultimately perform for its entire season.",ingredients:'Tropical and temperate marine algae extracts',bioactive:'Natural auxins, cytokinins, low-MW polysaccharides',mechanism:'Auxin-mediated cell elongation drives lateral root proliferation, while cytokinins stimulate meristematic activity — together creating a dense, high-surface-area root system from the earliest growth stages.',application:'Seed treatment and early-stage soil drench',alignment:'Root development stage — the invisible foundation of every yield outcome',arriving:true,products:[]},
-  phyto:{color:'#2A5C1E',label:'Pillar 02 — PhytoBoost',name:'PhytoBoost',tagline:'Accelerated Vigour & Canopy Building',objective:"A dense, high-functioning canopy is the crop's solar panel. PhytoBoost is engineered to accelerate canopy establishment — driving rapid cell division, lateral shoot growth, and early photosynthetic capacity so the crop reaches its productive phase faster and stronger.",ingredients:'<em>Kappaphycus alvarezii</em> & <em>Sargassum</em> (Tropical)',bioactive:'Cytokinins (Zeatin-type), glycine betaine, low-molecular-weight polysaccharides',mechanism:'Cytokinins stimulate rapid cell division and lateral growth, while low-MW polysaccharides act as fast carbon and signalling molecules to accelerate early vegetative development.',application:'Foliar spray and drip irrigation',alignment:'Canopy stage — establishing a high-efficiency photosynthetic foundation',quality:'Supports dense, high-turgor, uniform canopy growth — the physiological base for consistent size, colour, and quality development.',arriving:false,products:[{id:'pb201',sku:'UPC PB 201 P',desc:'Powder · Kappaphycus alvarezii'},{id:'pb261',sku:'UPC PB 261 L',desc:'Liquid · foliar growth stimulant'}]},
-  nutri:{color:'#1A3570',label:'Pillar 05 — NutriSpike',name:'NutriSpike',tagline:'Metabolic Fueling & Nutrient Efficiency',objective:"Fertilizer in the soil means nothing if the crop cannot move it. NutriSpike exists to solve the last-metre problem of plant nutrition — enhancing the metabolic and transport machinery inside the crop so every unit of applied nutrient reaches where it creates yield.",ingredients:'<em>Gracilaria edulis</em> WSP (Tropical)',bioactive:'Ribitol, mannitol (polyols), glutamic acid',mechanism:'Polyols support cellular energy balance and carbon metabolism, enhancing ATP-driven nutrient transport even under low-energy conditions.',application:'Foliar & drip during fruit or root development',alignment:'Nutrient assimilation stage — maximising biomass and sugar density',quality:'Improves internal nutrient distribution and metabolic efficiency, supporting dense, uniform, high-quality produce outcomes.',arriving:false,products:[{id:'ns501',sku:'UPC NS 501 P',desc:'Powder · nutrient uptake enhancer'}]},
-  stress:{color:'#7A3D10',label:'Pillar 03 — Stressilient',name:'Stressilient',tagline:'Abiotic Stress Shield & Recovery',objective:"Climate unpredictability is agriculture's most dangerous variable. Stressilient is Trishul Biotech's answer — a marine algae formulation engineered to activate the crop's own stress-response systems before stress strikes, and accelerate recovery after it passes.",ingredients:'<em>Gracilaria edulis</em> (Tropical) & <em>Ascophyllum nodosum</em> (Temperate)',bioactive:'Phlorotannins, glycine betaine, salicylic acid precursors',mechanism:'Phlorotannins provide UV and oxidative protection, while glycine betaine maintains cellular water balance and prevents stress-induced tissue collapse.',application:'Foliar spray and drip application, ideally 48 hours before predicted stress',alignment:'Protection stage — maintaining metabolic continuity under abiotic stress',quality:'Preserves structural integrity and visual quality during stress, reducing physiological disorders and stabilising yield expression.',primaryCrops:'Apples, Grapes, Strawberries, Potatoes, Tomatoes, Carrots, Asparagus, Onions',arriving:false,products:[{id:'st351',sku:'UPC ST 351 L',desc:'Liquid · foliar & drip abiotic stress management'}]},
-  quali:{color:'#4A1A6E',label:'Pillar 04 — QualiGain',name:'QualiGain',tagline:'Harvest Quality & Post-Harvest Value',objective:"Export markets don't just buy crops — they buy consistency, firmness, shelf life, and appearance. QualiGain is the final UPCROP® layer that transforms field yield into market-ready, export-grade produce with the structural strength to survive cold chains and long supply routes.",ingredients:'<em>Gracilaria edulis</em> (Tropical), enzymatically hydrolysed <em>Ecklonia maxima</em> (Temperate), and soy protein hydrolysate',bioactive:'Natural auxins, cytokinins, salicylic acid, soy peptides',mechanism:'Auxins expand root systems, peptides support protein synthesis, and salicylic acid signalling strengthens cell walls and tissue firmness.',application:'Foliar spray and drip application from flowering through harvest',alignment:'Shelf-life & harvest stage — building physically stronger, uniform produce',quality:'Enhances structural strength, uniformity, and post-harvest durability aligned with export-grade quality expectations.',arriving:false,products:[{id:'qg451',sku:'UPC QG 451 L',desc:'Liquid · pre-harvest to post-harvest application'}]},
-  bioguard:{color:'#C0392B',label:'Pillar 06 — BioGuard',name:'BioGuard',tagline:'Biological Plant Protection',objective:"What if crops could defend themselves more intelligently? BioGuard is our next frontier — exploring how marine algae-derived bioactive compounds can activate and amplify the plant's own immune and defense signalling pathways, reducing dependence on synthetic protection chemistry.",ingredients:'Under advanced R&D',bioactive:'Under advanced R&D',mechanism:'BioGuard targets the priming of systemic resistance pathways using novel marine algae bioactives. The science is in development — the outcomes we are working toward are significant.',application:'To be confirmed post-development',alignment:'Plant immunity & protection stage',arriving:true,products:[]},
-  bioflow:{color:'#00B4C5',label:'Pillar 07 — BioFlow',name:'BioFlow',tagline:'Foliar Spray Optimisation & Adjuvant Science',objective:"Not all biological inputs reach the crop the way they should. BioFlow is our adjuvant science pillar — engineered to solve the fundamental problem of foliar spray delivery: ensuring that biostimulants and crop inputs actually stick, spread, and penetrate the leaf surface rather than rolling off or drying before absorption. When the input reaches the target, every application works harder.",ingredients:'Adjuvant actives — under development',bioactive:'Spreaders, stickers, penetration enhancers, wetting agents',mechanism:'BioFlow adjuvant formulations reduce the surface tension of spray droplets, improve leaf surface contact and retention, and enhance stomatal penetration — maximising the efficacy of any biostimulant or crop input applied as a foliar spray, particularly on waxy or hydrophobic leaf surfaces.',application:'Tank-mixed with foliar biostimulants and crop inputs at point of spray application',alignment:'Foliar delivery optimisation — improving the efficiency of every spray application across all crop stages',arriving:true,products:[]}
-};
-
-function selectPillar(key){
-  const d=pillarData[key];
-  document.getElementById('pillar-placeholder').style.display='none';
-  const c=document.getElementById('pillar-detail-content');
-  c.style.display='block';
-  document.querySelectorAll('.swirl-seg path.swirl-path').forEach(p=>{p.style.opacity='0.45';p.style.filter='none';});
-  const seg=document.querySelector('#seg-'+key+' path.swirl-path');
-  if(seg){seg.style.opacity='1';seg.style.filter='brightness(1.4) saturate(1.2)';}
-  hoverPillar(key);
-  let productsHTML='';
-  if(d.arriving){
-    productsHTML=`<div class="pp-arriving">🌿 Products Arriving Soon — R&D in Progress</div>`;
-  }else if(d.products&&d.products.length){
-    productsHTML=`<div class="pp-products"><div class="pp-prod-label">Products — Click to View Full Details</div><ul class="pp-prod-list">${d.products.map(p=>`<li onclick="openModal('${p.id}')"><span><strong>${p.sku}</strong> — ${p.desc}</span><span>→</span></li>`).join('')}</ul></div>`;
+    const updatePath = () => {
+      const rect = journeySection.getBoundingClientRect();
+      const winH  = window.innerHeight;
+      const progress = Math.min(1, Math.max(0, (winH - rect.top) / (rect.height + winH)));
+      pathEl.style.strokeDashoffset = totalLen * (1 - progress);
+    };
+    window.addEventListener('scroll', ()=>requestAnimationFrame(updatePath), {passive:true});
+    updatePath();
   }
-  c.innerHTML=`
-    <div class="pp-header">
-      <div class="pp-color-bar" style="background:${d.color}"></div>
-      <div class="pp-titles">
-        <div class="pp-pillar-label">${d.label}</div>
-        <div class="pp-name">${d.name}</div>
-        <div class="pp-tagline">${d.tagline}</div>
-      </div>
-    </div>
-    <div class="pp-objective">${d.objective}</div>
-    ${productsHTML}`;
+
+  /* Reveal nodes as they enter viewport */
+  const nodes = journeySection.querySelectorAll('.journey-node');
+  if(nodes.length && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('revealed'); });
+    },{threshold:0.25});
+    nodes.forEach(n=>io.observe(n));
+  }
+}
+
+/* ─── INDIA MAP HUB PING ─── */
+function initIndiaPing(){
+  const section = document.querySelector('.india-map-section');
+  if(!section || !('IntersectionObserver' in window)) return;
+  const dots = section.querySelectorAll('.hub-dot');
+  let pinged = false;
+  const io = new IntersectionObserver((entries)=>{
+    if(entries[0].isIntersecting && !pinged){
+      pinged = true;
+      dots.forEach((d,i)=>setTimeout(()=>d.classList.add('ping'), i*80));
+    }
+  },{threshold:0.3});
+  io.observe(section);
+}
+
+/* ─── MOBILE NAV OVERLAY CLOSE ON BACKGROUND TAP ─── */
+function handleMobileNavClick(e){
+  if(e.target === e.currentTarget) closeMobileNav();
 }
 
 /* ─── MODAL DATA ─── */
@@ -248,13 +220,10 @@ function closeModalOutside(e){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-// Store crop part base opacities
 window.addEventListener('load',()=>{
-  allCropParts.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)el.dataset.baseOpacity=el.getAttribute('opacity')||'0.35';
-  });
   observeReveal();
+  initJourney();
+  initIndiaPing();
   /* initParticles(); — disabled */
   /* ─── HEADER SCROLL ─── */
   const mainHeader = document.getElementById('main-header');
