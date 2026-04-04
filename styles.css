@@ -36,8 +36,8 @@ header {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: none;
-  padding: 0 40px 8px;
-  display: flex; align-items: center; justify-content: space-between; height: 72px;
+  padding: 0 48px 8px;
+  display: flex; align-items: center; justify-content: space-between; height: 88px;
   transition: background 0.3s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 header.header-hidden { transform: translateY(-110%); }
@@ -65,26 +65,33 @@ nav { display: flex; align-items: center; gap: 2px; }
   background: none; border: none; cursor: pointer;
   font-family: 'Darker Grotesque', sans-serif; font-size: 1.05rem; font-weight: 700;
   color: #111; letter-spacing: 0;
-  padding: 8px 14px; position: relative; transition: var(--tr);
+  padding: 8px 14px; position: relative; transition: color var(--tr);
 }
-.nav-btn:hover { color: var(--forest); opacity: 1; }
-.nav-btn.active { color: var(--forest); font-weight: 600; }
+.nav-btn::after {
+  content: ''; position: absolute; bottom: 2px; left: 50%; right: 50%;
+  height: 2px; background: #111; border-radius: 2px;
+  transition: left 0.28s ease, right 0.28s ease;
+}
+.nav-btn:hover::after, .nav-btn.active::after { left: 14px; right: 14px; }
+.nav-btn:hover { color: #111; }
+.nav-btn.active { color: #111; }
 .nav-cta-pill {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.35);
+  background: #111;
+  border: 1px solid #111;
   cursor: pointer;
-  font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.9);
-  padding: 8px 22px; border-radius: 50px;
+  font-family: 'Darker Grotesque', sans-serif; font-size: 1rem; font-weight: 600;
+  letter-spacing: 0; text-transform: none; color: #fff;
+  padding: 9px 22px; border-radius: 50px;
   transition: var(--tr);
   white-space: nowrap;
   display: flex; align-items: center; gap: 6px;
+  margin-left: 8px;
 }
 .cta-arrow { font-size: 1rem; line-height: 1; }
 .nav-cta-pill:hover {
-  background: #fff;
-  border-color: #fff;
-  color: var(--forest-dk);
+  background: #333;
+  border-color: #333;
+  color: #fff;
 }
 .nav-cta-btn {
   background: var(--mint); color: var(--forest-dk); border: none; cursor: pointer;
@@ -98,17 +105,17 @@ nav { display: flex; align-items: center; gap: 2px; }
 .section { display: none; min-height: 100vh; padding-top: 90px; }
 
 /* Each section carries its own background so the body never bleeds through on switch */
-#home.section    { background: #fff; padding-top: 72px; }
-#tech.section    { background: var(--forest-dk);  padding-top: 72px; }
-#labs.section    { background: var(--forest-dk);  padding-top: 72px; }
+#home.section    { background: #fff; padding-top: 88px; }
+#tech.section    { background: var(--forest-dk);  padding-top: 88px; }
+#labs.section    { background: var(--forest-dk);  padding-top: 88px; }
 #india.section   { background: var(--parchment); }
 #gallery.section { background: var(--parchment); }
 #contact.section { background: #0e1008; }
 
 /* ─── HERO CARD ──────────────────────────────────── */
 .hero-fullpage {
-  height: calc(100vh - 72px - 24px); min-height: 500px;
-  margin: 12px 12px 12px;
+  height: calc(100vh - 88px - 24px); min-height: 500px;
+  margin: 0 48px 24px;
   border-radius: 20px;
   position: relative; overflow: hidden;
   display: flex; align-items: flex-end; justify-content: flex-start;
@@ -1451,7 +1458,7 @@ footer {
 
 /* ─── HEADER LOGO ─────────────────────────────────── */
 .header-logo-img {
-  height: 36px;
+  height: 48px;
   width: auto;
   display: block;
   filter: none;
