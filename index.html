@@ -119,6 +119,7 @@
             <div class="why-meta">
               <span class="why-meta-pill">Noida · Pune · Hyderabad · Chennai</span>
             </div>
+            <a class="why-cta-btn" onclick="navTo('labs',event)" href="#">Our Labs →</a>
           </div>
 
           <div class="why-text-panel" data-slide="1">
@@ -129,6 +130,7 @@
               <span class="why-meta-pill">Sivakasi, Tamil Nadu</span>
               <span class="why-meta-pill">ISO 9001:2015</span>
             </div>
+            <a class="why-cta-btn" onclick="navTo('tech',event)" href="#">Our Facility →</a>
           </div>
 
           <div class="why-text-panel" data-slide="2">
@@ -139,6 +141,7 @@
               <span class="why-meta-pill">7 Innovation Pillars</span>
               <span class="why-meta-pill">FCO Registered</span>
             </div>
+            <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Browse Products →</a>
           </div>
 
           <div class="why-text-panel" data-slide="3">
@@ -148,6 +151,7 @@
             <div class="why-meta">
               <span class="why-meta-pill">All major agri states</span>
             </div>
+            <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Distribution →</a>
           </div>
 
           <!-- Progress indicators -->
@@ -159,24 +163,31 @@
           </div>
         </div>
 
-        <!-- RIGHT: scrollable image stack -->
+        <!-- RIGHT: layered image stack -->
         <div class="why-scroll-right">
-          <div class="why-image-item" data-index="0">
-            <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
-            <div class="why-image-label">Multi-Centre R&amp;D</div>
+          <!-- Sticky image container with all layers overlaid -->
+          <div class="why-image-stack">
+            <div class="why-image-layer active" data-index="0">
+              <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
+              <div class="why-image-label">Multi-Centre R&amp;D</div>
+            </div>
+            <div class="why-image-layer" data-index="1">
+              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
+              <div class="why-image-label">Own Manufacturing</div>
+            </div>
+            <div class="why-image-layer" data-index="2">
+              <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
+              <div class="why-image-label">Biological Portfolio</div>
+            </div>
+            <div class="why-image-layer" data-index="3">
+              <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
+              <div class="why-image-label">Pan-India Reach</div>
+            </div>
           </div>
-          <div class="why-image-item" data-index="1">
-            <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
-            <div class="why-image-label">Own Manufacturing</div>
-          </div>
-          <div class="why-image-item" data-index="2">
-            <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
-            <div class="why-image-label">Biological Portfolio</div>
-          </div>
-          <div class="why-image-item" data-index="3">
-            <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
-            <div class="why-image-label">Pan-India Reach</div>
-          </div>
+          <!-- Spacers — each drives one scroll step (one per slide after the first) -->
+          <div class="why-scroll-spacer" data-target="1"></div>
+          <div class="why-scroll-spacer" data-target="2"></div>
+          <div class="why-scroll-spacer" data-target="3"></div>
         </div>
 
       </div>

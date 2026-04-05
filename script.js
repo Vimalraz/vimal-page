@@ -162,6 +162,98 @@ function initIndiaPing(){
   io.observe(section);
 }
 
+/* ─── WHY TRISHUL — iPhone card-zoom scroll animation ─── */
+function initWhyScroll(){
+  const card = document.querySelector('.why-outer-card');
+  if(!card) return;
+
+  const texts  = card.querySelectorAll('.why-text-panel');
+  const layers = card.querySelectorAll('.why-image-layer');
+  const dots   = card.querySelectorAll('.why-dot');
+  const scrollRight = card.querySelector('.why-scroll-right');
+  if(!scrollRight) return;
+
+  const N = texts.length; // 4 slides
+  let current = 0;
+
+  // Mobile: simple IntersectionObserver fallback
+  if(window.innerWidth <= 768){
+    layers.forEach((l,i) => {
+      l.style.cssText = '';
+      if(i===0) l.classList.add('mob-active');
+    });
+    texts[0].classList.add('active');
+    return;
+  }
+
+  // Set first layer fully visible immediately
+  layers[0].style.cssText = 'opacity:1; transform:scale(1) translateY(0px); z-index:2;';
+
+  function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; } // ease in-out
+
+  function onScroll(){
+    const rect   = scrollRight.getBoundingClientRect();
+    const viewH  = window.innerHeight;
+    // Pixels scrolled past the top of the right column
+    const scrolled = Math.max(0, -rect.top);
+    // Each step = 1 viewport height (matching the spacer heights)
+    const stepH    = viewH;
+    const raw      = scrolled / stepH;           // e.g. 1.73 = step 1, 73% through
+    const floorIdx = Math.min(N - 1, Math.floor(raw));
+    const prog     = (floorIdx === N - 1) ? 0 : Math.min(1, raw - floorIdx); // 0–1
+
+    layers.forEach((layer, i) => {
+      if(i < floorIdx){
+        // Already passed — snap gone
+        layer.style.cssText = 'opacity:0; transform:scale(0.9) translateY(-20px); z-index:1;';
+      } else if(i === floorIdx){
+        if(i === N - 1){
+          // Last slide — always fully visible
+          layer.style.cssText = 'opacity:1; transform:scale(1) translateY(0px); z-index:2;';
+        } else {
+          // Active slide exits as progress grows
+          const ep    = ease(Math.max(0, (prog - 0.45) / 0.55));
+          const scale = 1 - ep * 0.05;
+          const op    = 1 - ep * 0.85;
+          const ty    = -ep * 18;
+          layer.style.cssText = `opacity:${op.toFixed(3)}; transform:scale(${scale.toFixed(4)}) translateY(${ty.toFixed(1)}px); z-index:2;`;
+        }
+      } else if(i === floorIdx + 1){
+        // Incoming slide zooms in from below
+        const ip    = ease(Math.min(1, prog / 0.95));
+        const scale = 0.82 + ip * 0.18;
+        const op    = ip;
+        const ty    = (1 - ip) * 70;
+        layer.style.cssText = `opacity:${Math.min(1, op).toFixed(3)}; transform:scale(${scale.toFixed(4)}) translateY(${ty.toFixed(1)}px); z-index:3;`;
+      } else {
+        // Future — hidden, ready
+        layer.style.cssText = 'opacity:0; transform:scale(0.82) translateY(70px); z-index:1;';
+      }
+    });
+
+    // Snap text at midpoint of transition
+    const newIdx = Math.min(N-1, prog > 0.52 ? floorIdx + 1 : floorIdx);
+    if(newIdx !== current){
+      texts[current].classList.remove('active');
+      texts[newIdx].classList.add('active');
+      dots.forEach((d,i) => d.classList.toggle('active', i === newIdx));
+      current = newIdx;
+    }
+  }
+
+  // Wire dot buttons
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      // Scroll to the right position for that slide
+      const targetY = scrollRight.getBoundingClientRect().top + window.scrollY + i * window.innerHeight;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    });
+  });
+
+  window.addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
+  onScroll(); // run on load
+}
+
 /* ─── MOBILE NAV OVERLAY CLOSE ON BACKGROUND TAP ─── */
 function handleMobileNavClick(e){
   if(e.target === e.currentTarget) closeMobileNav();
@@ -224,6 +316,7 @@ window.addEventListener('load',()=>{
   observeReveal();
   initJourney();
   initIndiaPing();
+  initWhyScroll();
   /* initParticles(); — disabled */
   /* ─── HEADER SCROLL ─── */
   const mainHeader = document.getElementById('main-header');
