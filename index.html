@@ -105,12 +105,35 @@
       <span class="why-eyebrow">Why Trishul Biotech</span>
     </div>
 
-    <!-- Card matches hero margins -->
+    <!-- Scroll container: transparent, height = 4×100vh for sticky scroll -->
     <div class="why-outer-card" id="why-trishul">
-      <div class="why-split-section">
+      <!-- Compact visual card: sticky, ~540px tall -->
+      <div class="why-card-sticky">
 
-        <!-- LEFT: sticky text panel (no eyebrow here) -->
-        <div class="why-sticky-left">
+        <!-- LEFT: image fills flush -->
+        <div class="why-image-col">
+          <div class="why-image-stack">
+            <div class="why-image-layer active" data-index="0">
+              <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
+              <div class="why-image-label">Multi-Centre R&amp;D</div>
+            </div>
+            <div class="why-image-layer" data-index="1">
+              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
+              <div class="why-image-label">Own Manufacturing</div>
+            </div>
+            <div class="why-image-layer" data-index="2">
+              <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
+              <div class="why-image-label">Biological Portfolio</div>
+            </div>
+            <div class="why-image-layer" data-index="3">
+              <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
+              <div class="why-image-label">Pan-India Reach</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: text panels, crossfade on scroll -->
+        <div class="why-text-col">
 
           <div class="why-text-panel active" data-slide="0">
             <div class="why-tag">Multi-Centre R&amp;D</div>
@@ -154,40 +177,13 @@
             <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Distribution →</a>
           </div>
 
-          <!-- Progress indicators -->
+          <!-- Progress dots -->
           <div class="why-progress">
             <button class="why-dot active" data-target="0" aria-label="Slide 1"></button>
             <button class="why-dot" data-target="1" aria-label="Slide 2"></button>
             <button class="why-dot" data-target="2" aria-label="Slide 3"></button>
             <button class="why-dot" data-target="3" aria-label="Slide 4"></button>
           </div>
-        </div>
-
-        <!-- RIGHT: layered image stack -->
-        <div class="why-scroll-right">
-          <!-- Sticky image container with all layers overlaid -->
-          <div class="why-image-stack">
-            <div class="why-image-layer active" data-index="0">
-              <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
-              <div class="why-image-label">Multi-Centre R&amp;D</div>
-            </div>
-            <div class="why-image-layer" data-index="1">
-              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
-              <div class="why-image-label">Own Manufacturing</div>
-            </div>
-            <div class="why-image-layer" data-index="2">
-              <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
-              <div class="why-image-label">Biological Portfolio</div>
-            </div>
-            <div class="why-image-layer" data-index="3">
-              <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
-              <div class="why-image-label">Pan-India Reach</div>
-            </div>
-          </div>
-          <!-- Spacers — each drives one scroll step (one per slide after the first) -->
-          <div class="why-scroll-spacer" data-target="1"></div>
-          <div class="why-scroll-spacer" data-target="2"></div>
-          <div class="why-scroll-spacer" data-target="3"></div>
         </div>
 
       </div>

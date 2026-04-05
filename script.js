@@ -170,13 +170,11 @@ function initWhyScroll(){
   const texts  = card.querySelectorAll('.why-text-panel');
   const layers = card.querySelectorAll('.why-image-layer');
   const dots   = card.querySelectorAll('.why-dot');
-  const scrollRight = card.querySelector('.why-scroll-right');
-  if(!scrollRight) return;
 
   const N = texts.length; // 4 slides
   let current = 0;
 
-  // Mobile: simple IntersectionObserver fallback
+  // Mobile: simple tab fallback
   if(window.innerWidth <= 768){
     layers.forEach((l,i) => {
       l.style.cssText = '';
@@ -192,9 +190,9 @@ function initWhyScroll(){
   function ease(t){ return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; } // ease in-out
 
   function onScroll(){
-    const rect   = scrollRight.getBoundingClientRect();
+    const rect   = card.getBoundingClientRect();
     const viewH  = window.innerHeight;
-    // Pixels scrolled past the top of the right column
+    // Pixels scrolled past the top of the scroll container
     const scrolled = Math.max(0, -rect.top);
     // Each step = 1 viewport height (matching the spacer heights)
     const stepH    = viewH;
@@ -244,8 +242,7 @@ function initWhyScroll(){
   // Wire dot buttons
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      // Scroll to the right position for that slide
-      const targetY = scrollRight.getBoundingClientRect().top + window.scrollY + i * window.innerHeight;
+      const targetY = card.getBoundingClientRect().top + window.scrollY + i * window.innerHeight;
       window.scrollTo({ top: targetY, behavior: 'smooth' });
     });
   });

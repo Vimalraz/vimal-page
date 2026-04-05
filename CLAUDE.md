@@ -94,19 +94,22 @@ The site is a **tab-based SPA** — all content lives inside `index.html`. Navig
 - **Hero canvas:** `#hero-grid-canvas` — dot-grid constellation animation
 - **Scroll reveals:** Elements with `.reveal` class animate in via `IntersectionObserver`
   - Delay variants: `.reveal-delay-1`, `.reveal-delay-2`
-- **Why Trishul section:** Split-screen sticky-scroll — left panel fades text, right panel switches images based on scroll position
-  - Scroll spacers (`why-scroll-spacer[data-target]`) drive slide transitions
-  - Dot navigation: `.why-dot[data-target]`
+- **Why Trishul section:** Compact card with sticky scroll — image left, text right, 4 slides cross-fade on scroll
+  - `.why-outer-card` = transparent scroll container (`height: 4×100vh`), no background, no spacer elements
+  - `.why-card-sticky` = actual visual card (`position: sticky; height: 540px`), gray bg, rounded, centered
+  - Scroll detection uses `.why-outer-card.getBoundingClientRect().top` in `initWhyScroll()`
+  - Dot navigation: `.why-dot[data-target]` clicks scroll to `card.top + i × viewH`
 - **UPCROP Journey:** Animated SVG path + node cards that animate in on scroll
 - **Product modals:** `openModal(productId)` / `closeModal()` for product detail overlays
 
 ### Why Trishul Section (Critical Layout)
-- **Width:** 1200px max, centered
-- **Split:** 569px text panel | gap | 569px image card (≈569×560px)
-- `.why-outer-card` is the rounded outer wrapper
-- `.why-split-section` is the flex container
-- `.why-sticky-left` — sticky left panel; `.why-scroll-right` — scrollable right side
+- **Card:** `max-width: 940px`, `height: 540px`, `background: #eeedea`, `border-radius: 24px`, centered via `margin: 0 auto`
+- **Split:** `.why-image-col` (`flex: 0 0 46%`, image fills flush `inset: 0`) | `.why-text-col` (`flex: 1`)
+- Image fills left column edge-to-edge; card `overflow: hidden` rounds the left corners
+- Text panels: `position: absolute; inset: 0` inside `.why-text-col`, flex column, `padding: 40px 44px 64px`
+- Progress dots: `position: absolute; bottom: 28px; left: 44px` inside `.why-text-col`
 - 4 slides: Multi-Centre R&D (0), Own Manufacturing (1), Biological Portfolio (2), Pan-India Reach (3)
+- **Do NOT use `.why-split-section`, `.why-sticky-left`, `.why-scroll-right`, or scroll spacers** — these are removed
 
 ### Color Palette (CSS Variables in `:root`)
 | Variable        | Usage                              |
