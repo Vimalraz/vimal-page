@@ -4359,21 +4359,32 @@ footer {
 }
 
 /* Compact visual card — sticky, centered in viewport */
+/* LAYER 1: outer gray card */
 .why-card-sticky {
   position: sticky;
-  top: calc(50vh - 270px);   /* 540px card centered: (100vh - 540) / 2 */
+  top: calc(50vh - 270px);
   height: 540px;
-  background: #eeedea;
-  border-radius: 24px;
-  overflow: hidden;
+  background: #e9e8e4;   /* reference gray — slightly warm light gray */
+  border-radius: 20px;
+  overflow: visible;     /* inner elements clip themselves */
   display: flex;
-  box-shadow: 0 2px 40px rgba(0,0,0,0.09);
+  padding: 12px;         /* gap between outer card and inner elements */
+  gap: 10px;             /* gap between image and white card */
+  box-shadow: 0 2px 32px rgba(0,0,0,0.08);
 }
 
-/* LEFT: image column fills flush — card clips its corners */
+/* LAYER 2 (left): image column with inset rounding */
 .why-image-col {
   flex: 0 0 46%;
   position: relative;
+  min-width: 0;
+}
+
+/* The rounded image rect — inset from gray card edges */
+.why-image-wrap {
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -4382,7 +4393,7 @@ footer {
   inset: 0;
 }
 
-/* Each image layer fills the entire image column */
+/* Each image layer fills the wrap */
 .why-image-layer {
   position: absolute;
   inset: 0;
@@ -4404,38 +4415,46 @@ footer {
 /* Image label chip */
 .why-image-label {
   position: absolute;
-  bottom: 18px;
-  left: 18px;
+  bottom: 16px;
+  left: 16px;
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(0,0,0,0.36);
+  background: rgba(0,0,0,0.38);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 100px;
-  padding: 5px 14px;
+  padding: 5px 13px;
   z-index: 3;
 }
 
-/* RIGHT: text column */
+/* LAYER 2 (right): white rounded rect text card */
 .why-text-col {
   flex: 1;
+  min-width: 0;
+}
+
+/* White inner card */
+.why-text-inner {
+  background: #ffffff;
+  border-radius: 12px;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
 
-/* Text panels — fill text column, crossfade */
+/* Text panels — absolute inside white card, crossfade */
 .why-text-panel {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 44px 64px 44px;
+  padding: 36px 40px 60px 40px;
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
@@ -4538,11 +4557,11 @@ footer {
   background: rgba(0,0,0,0.04);
 }
 
-/* Progress dots */
+/* Progress dots — positioned inside white card */
 .why-progress {
   position: absolute;
-  bottom: 28px;
-  left: 44px;
+  bottom: 24px;
+  left: 40px;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -4578,17 +4597,21 @@ footer {
     top: auto;
     height: auto;
     flex-direction: column;
-    border-radius: 18px;
+    border-radius: 16px;
+    padding: 10px;
+    gap: 8px;
   }
-  .why-image-col { flex: none; width: 100%; height: 62vw; min-height: 220px; overflow: hidden; }
-  .why-image-stack { position: relative; width: 100%; height: 100%; }
+  .why-image-col { flex: none; width: 100%; }
+  .why-image-wrap { height: 58vw; min-height: 200px; border-radius: 8px; }
+  .why-image-stack { position: absolute; inset: 0; }
   .why-image-layer { inset: 0 !important; border-radius: 0; opacity: 0; }
   .why-image-layer.mob-active { opacity: 1 !important; }
-  .why-text-col { flex: none; width: 100%; min-height: 320px; }
-  .why-text-panel { position: relative; inset: auto; padding: 28px 24px 16px; opacity: 0; max-height: 0; overflow: hidden; transform: none; transition: opacity 0.4s, max-height 0.5s; pointer-events: none; display: block; }
+  .why-text-col { flex: none; width: 100%; }
+  .why-text-inner { border-radius: 8px; min-height: 300px; }
+  .why-text-panel { position: relative; inset: auto; padding: 24px 22px 12px; opacity: 0; max-height: 0; overflow: hidden; transform: none; transition: opacity 0.4s, max-height 0.5s; pointer-events: none; display: block; }
   .why-text-panel.active { opacity: 1; max-height: 600px; pointer-events: auto; }
-  .why-progress { position: relative; bottom: auto; left: auto; padding: 0 24px 24px; margin-top: 8px; }
-  .why-image-label { bottom: 12px; left: 12px; font-size: 0.6rem; }
-  .why-heading { font-size: 1.7rem; }
+  .why-progress { position: relative; bottom: auto; left: auto; padding: 0 22px 22px; margin-top: 8px; }
+  .why-image-label { bottom: 10px; left: 10px; font-size: 0.6rem; }
+  .why-heading { font-size: 1.65rem; }
 }
 

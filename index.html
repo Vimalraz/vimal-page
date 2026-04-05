@@ -110,79 +110,84 @@
       <!-- Compact visual card: sticky, ~540px tall -->
       <div class="why-card-sticky">
 
-        <!-- LEFT: image fills flush -->
+        <!-- LEFT: image inset inside gray card -->
         <div class="why-image-col">
-          <div class="why-image-stack">
-            <div class="why-image-layer active" data-index="0">
-              <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
-              <div class="why-image-label">Multi-Centre R&amp;D</div>
-            </div>
-            <div class="why-image-layer" data-index="1">
-              <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
-              <div class="why-image-label">Own Manufacturing</div>
-            </div>
-            <div class="why-image-layer" data-index="2">
-              <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
-              <div class="why-image-label">Biological Portfolio</div>
-            </div>
-            <div class="why-image-layer" data-index="3">
-              <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
-              <div class="why-image-label">Pan-India Reach</div>
+          <div class="why-image-wrap">
+            <div class="why-image-stack">
+              <div class="why-image-layer active" data-index="0">
+                <img src="img/agricultural-research-and-development-center.jpg" alt="Multi-Centre R&D" loading="lazy">
+                <div class="why-image-label">Multi-Centre R&amp;D</div>
+              </div>
+              <div class="why-image-layer" data-index="1">
+                <img src="img/trishul-biotech-manufacturing-unit.jpg" alt="Own Manufacturing" loading="lazy">
+                <div class="why-image-label">Own Manufacturing</div>
+              </div>
+              <div class="why-image-layer" data-index="2">
+                <img src="img/bio-stimulant.jpg" alt="Biological Portfolio" loading="lazy">
+                <div class="why-image-label">Biological Portfolio</div>
+              </div>
+              <div class="why-image-layer" data-index="3">
+                <img src="img/trishul-biotech-sectors.jpg" alt="Pan-India Reach" loading="lazy">
+                <div class="why-image-label">Pan-India Reach</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: text panels, crossfade on scroll -->
+        <!-- RIGHT: white rounded rect inset inside gray card -->
         <div class="why-text-col">
+          <div class="why-text-inner">
 
-          <div class="why-text-panel active" data-slide="0">
-            <div class="why-tag">Multi-Centre R&amp;D</div>
-            <h2 class="why-heading">Science validated<br>across every zone.</h2>
-            <p class="why-desc">4 labs across India — from biomarker discovery to field validation. Our multi-centre science ensures results are consistent across India's diverse agro-climatic zones.</p>
-            <div class="why-meta">
-              <span class="why-meta-pill">Noida · Pune · Hyderabad · Chennai</span>
+            <div class="why-text-panel active" data-slide="0">
+              <div class="why-tag">Multi-Centre R&amp;D</div>
+              <h2 class="why-heading">Science validated<br>across every zone.</h2>
+              <p class="why-desc">4 labs across India — from biomarker discovery to field validation. Our multi-centre science ensures results are consistent across India's diverse agro-climatic zones.</p>
+              <div class="why-meta">
+                <span class="why-meta-pill">Noida · Pune · Hyderabad · Chennai</span>
+              </div>
+              <a class="why-cta-btn" onclick="navTo('labs',event)" href="#">Our Labs →</a>
             </div>
-            <a class="why-cta-btn" onclick="navTo('labs',event)" href="#">Our Labs →</a>
-          </div>
 
-          <div class="why-text-panel" data-slide="1">
-            <div class="why-tag">Own Manufacturing</div>
-            <h2 class="why-heading">GMP + ISO facility.<br>Zero outsourcing.</h2>
-            <p class="why-desc">Complete supply chain control from raw material to finished product at our Sivakasi facility — certified to GMP and ISO 9001:2015. Consistent quality, every batch.</p>
-            <div class="why-meta">
-              <span class="why-meta-pill">Sivakasi, Tamil Nadu</span>
-              <span class="why-meta-pill">ISO 9001:2015</span>
+            <div class="why-text-panel" data-slide="1">
+              <div class="why-tag">Own Manufacturing</div>
+              <h2 class="why-heading">GMP + ISO facility.<br>Zero outsourcing.</h2>
+              <p class="why-desc">Complete supply chain control from raw material to finished product at our Sivakasi facility — certified to GMP and ISO 9001:2015. Consistent quality, every batch.</p>
+              <div class="why-meta">
+                <span class="why-meta-pill">Sivakasi, Tamil Nadu</span>
+                <span class="why-meta-pill">ISO 9001:2015</span>
+              </div>
+              <a class="why-cta-btn" onclick="navTo('tech',event)" href="#">Our Facility →</a>
             </div>
-            <a class="why-cta-btn" onclick="navTo('tech',event)" href="#">Our Facility →</a>
-          </div>
 
-          <div class="why-text-panel" data-slide="2">
-            <div class="why-tag">Biological Portfolio</div>
-            <h2 class="why-heading">Marine-anchored.<br>Full crop lifecycle.</h2>
-            <p class="why-desc">Marine algae biologicals as our anchor, with a growing range of bio-stimulants, bio-fertilizers, and crop protection inputs covering every stage of the crop cycle.</p>
-            <div class="why-meta">
-              <span class="why-meta-pill">7 Innovation Pillars</span>
-              <span class="why-meta-pill">FCO Registered</span>
+            <div class="why-text-panel" data-slide="2">
+              <div class="why-tag">Biological Portfolio</div>
+              <h2 class="why-heading">Marine-anchored.<br>Full crop lifecycle.</h2>
+              <p class="why-desc">Marine algae biologicals as our anchor, with a growing range of bio-stimulants, bio-fertilizers, and crop protection inputs covering every stage of the crop cycle.</p>
+              <div class="why-meta">
+                <span class="why-meta-pill">7 Innovation Pillars</span>
+                <span class="why-meta-pill">FCO Registered</span>
+              </div>
+              <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Browse Products →</a>
             </div>
-            <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Browse Products →</a>
-          </div>
 
-          <div class="why-text-panel" data-slide="3">
-            <div class="why-tag">Pan-India Reach</div>
-            <h2 class="why-heading">Farm-to-shelf.<br>Nationwide.</h2>
-            <p class="why-desc">Warehouses and distribution across all major crop-growing hubs — bringing science-backed biological inputs directly to farmers and agri-retailers at scale.</p>
-            <div class="why-meta">
-              <span class="why-meta-pill">All major agri states</span>
+            <div class="why-text-panel" data-slide="3">
+              <div class="why-tag">Pan-India Reach</div>
+              <h2 class="why-heading">Farm-to-shelf.<br>Nationwide.</h2>
+              <p class="why-desc">Warehouses and distribution across all major crop-growing hubs — bringing science-backed biological inputs directly to farmers and agri-retailers at scale.</p>
+              <div class="why-meta">
+                <span class="why-meta-pill">All major agri states</span>
+              </div>
+              <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Distribution →</a>
             </div>
-            <a class="why-cta-btn" onclick="navTo('india',event)" href="#">Distribution →</a>
-          </div>
 
-          <!-- Progress dots -->
-          <div class="why-progress">
-            <button class="why-dot active" data-target="0" aria-label="Slide 1"></button>
-            <button class="why-dot" data-target="1" aria-label="Slide 2"></button>
-            <button class="why-dot" data-target="2" aria-label="Slide 3"></button>
-            <button class="why-dot" data-target="3" aria-label="Slide 4"></button>
+            <!-- Progress dots -->
+            <div class="why-progress">
+              <button class="why-dot active" data-target="0" aria-label="Slide 1"></button>
+              <button class="why-dot" data-target="1" aria-label="Slide 2"></button>
+              <button class="why-dot" data-target="2" aria-label="Slide 3"></button>
+              <button class="why-dot" data-target="3" aria-label="Slide 4"></button>
+            </div>
+
           </div>
         </div>
 
