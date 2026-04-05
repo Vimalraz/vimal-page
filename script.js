@@ -119,35 +119,181 @@ function showIndia(key,btn){
 }
 
 /* ─── BIOLOGICAL JOURNEY ─── */
-function initJourney(){
-  const journeySection = document.getElementById('upcrop-journey');
-  if(!journeySection) return;
+function initPillarUI(){
+  const section = document.getElementById('upcrop-journey');
+  if(!section) return;
 
-  /* Scroll-driven path draw */
-  const pathEl = document.getElementById('journey-path');
-  if(pathEl){
-    const totalLen = pathEl.getTotalLength();
-    pathEl.style.strokeDasharray = totalLen;
-    pathEl.style.strokeDashoffset = totalLen;
+  const PILLARS = [
+    { num:'01', name:'RaizUp',       color:'#6B4423', tagline:'Root Architecture & Seedling Vigour',
+      desc:'Auxin-mediated cell elongation drives lateral root proliferation, while cytokinins stimulate meristematic activity — creating a dense, high-surface-area root system from the earliest growth stages.',
+      zones:['roots'], products:[], arriving:true },
+    { num:'02', name:'PhytoBoost',   color:'#2A5C1E', tagline:'Accelerated Vigour & Canopy Building',
+      desc:'Cytokinins stimulate rapid cell division and lateral growth, while low-MW polysaccharides act as fast carbon and signalling molecules to accelerate early vegetative development.',
+      zones:['leaves','canopy'], products:[{id:'pb201',label:'UPC PB 201 P'},{id:'pb261',label:'UPC PB 261 L'}], arriving:false },
+    { num:'03', name:'Stressilient', color:'#7A3D10', tagline:'Abiotic Stress Shield & Recovery',
+      desc:'Phlorotannins provide UV and oxidative protection, while glycine betaine maintains cellular water balance and prevents stress-induced tissue collapse.',
+      zones:['full'], products:[{id:'st351',label:'UPC ST 351 L'}], arriving:false },
+    { num:'04', name:'QualiGain',    color:'#4A1A6E', tagline:'Harvest Quality & Post-Harvest Value',
+      desc:'Auxins expand root systems, peptides support protein synthesis, and salicylic acid signalling strengthens cell walls and tissue firmness for export-grade quality.',
+      zones:['fruit'], products:[{id:'qg451',label:'UPC QG 451 L'}], arriving:false },
+    { num:'05', name:'NutriSpike',   color:'#1A3570', tagline:'Metabolic Fueling & Nutrient Efficiency',
+      desc:'Polyols support cellular energy balance and carbon metabolism, enhancing ATP-driven nutrient transport even under low-energy conditions.',
+      zones:['stem','leaves'], products:[{id:'ns501',label:'UPC NS 501 P'}], arriving:false },
+    { num:'06', name:'BioGuard',     color:'#C0392B', tagline:'Biological Plant Protection',
+      desc:'BioGuard targets the priming of systemic resistance pathways using novel marine algae bioactives. The science is in development — the outcomes we are working toward are significant.',
+      zones:['full'], products:[], arriving:true },
+    { num:'07', name:'BioFlow',      color:'#00B4C5', tagline:'Foliar Spray Optimisation & Adjuvant Science',
+      desc:'BioFlow adjuvant formulations reduce surface tension, improve leaf surface contact and retention, and enhance stomatal penetration — maximising the efficacy of any biostimulant foliar spray.',
+      zones:['leaves','canopy'], products:[], arriving:true }
+  ];
 
-    const updatePath = () => {
-      const rect = journeySection.getBoundingClientRect();
-      const winH  = window.innerHeight;
-      const progress = Math.min(1, Math.max(0, (winH - rect.top) / (rect.height + winH)));
-      pathEl.style.strokeDashoffset = totalLen * (1 - progress);
-    };
-    window.addEventListener('scroll', ()=>requestAnimationFrame(updatePath), {passive:true});
-    updatePath();
+  // Map zone names → SVG group IDs in Plant-scientific.svg
+  const ZONE_TO_SVG = {
+    roots:  ['Roots'],
+    stem:   ['Stem'],
+    leaves: ['Leaves'],
+    canopy: ['Canopy'],
+    fruit:  ['Fruit','Flowers']
+  };
+  const ALL_SVG_IDS = ['Canopy','Fruit','Flowers','Leaves','Stem','Roots'];
+  const ALL_ZONES   = ['roots','stem','leaves','canopy','fruit'];
+
+  const tabs        = section.querySelectorAll('.pillar-tab');
+  const zoneLbls    = section.querySelectorAll('.zone-lbl');
+  const piNum       = section.querySelector('#pi-num');
+  const piName      = section.querySelector('#pi-name');
+  const piTagline   = section.querySelector('#pi-tagline');
+  const piDesc      = section.querySelector('#pi-desc');
+  const piProds     = section.querySelector('#pi-products');
+  const piZones     = section.querySelector('#pi-zones');
+  const piEyebrow   = section.querySelector('.pi-eyebrow');
+  const plantObj    = section.querySelector('#plant-obj');
+  const piPlaceholder = section.querySelector('#pi-placeholder');
+  const piContent   = section.querySelector('#pi-content');
+
+  let svgGroups = null;
+  let currentIdx = -1;
+
+  function rgba(hex, a){
+    const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+    return `rgba(${r},${g},${b},${a})`;
   }
 
-  /* Reveal nodes as they enter viewport */
-  const nodes = journeySection.querySelectorAll('.journey-node');
-  if(nodes.length && 'IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('revealed'); });
-    },{threshold:0.25});
-    nodes.forEach(n=>io.observe(n));
+  function loadSvgGroups(){
+    try {
+      const doc = plantObj.contentDocument;
+      if(!doc) return false;
+      svgGroups = {};
+      ALL_SVG_IDS.forEach(id => { svgGroups[id] = doc.getElementById(id); });
+      ALL_SVG_IDS.forEach(id => {
+        if(svgGroups[id]) svgGroups[id].style.transition = 'opacity 0.4s ease, filter 0.4s ease';
+      });
+      return true;
+    } catch(e){ return false; }
   }
+
+  function clearPlantHighlight(){
+    if(!svgGroups) return;
+    ALL_SVG_IDS.forEach(id => {
+      const el = svgGroups[id];
+      if(!el) return;
+      el.style.opacity = '1';
+      el.style.filter  = '';
+    });
+  }
+
+  function applyPlantHighlight(activeZones, color){
+    if(!svgGroups) return;
+    const isFull = activeZones[0] === 'full';
+    const activeIds = new Set();
+    if(isFull){ ALL_SVG_IDS.forEach(id => activeIds.add(id)); }
+    else { activeZones.forEach(z => (ZONE_TO_SVG[z]||[]).forEach(id => activeIds.add(id))); }
+    ALL_SVG_IDS.forEach(id => {
+      const el = svgGroups[id];
+      if(!el) return;
+      if(activeIds.has(id)){
+        el.style.opacity = '1';
+        el.style.filter  = `drop-shadow(0 0 8px ${color}88)`;
+      } else {
+        el.style.opacity = '0.15';
+        el.style.filter  = 'saturate(0.15) brightness(1.1)';
+      }
+    });
+  }
+
+  function select(idx){
+    const p = PILLARS[idx];
+    const active = p.zones[0]==='full' ? ALL_ZONES : p.zones;
+    currentIdx = idx;
+
+    /* tabs */
+    tabs.forEach((t,i) => t.classList.toggle('active', i===idx));
+
+    /* plant */
+    applyPlantHighlight(p.zones, p.color);
+
+    /* zone labels */
+    zoneLbls.forEach(lbl => {
+      const z = lbl.dataset.zone;
+      const on = active.includes(z);
+      lbl.classList.toggle('lbl-active', on);
+      lbl.style.color       = on ? p.color : '';
+      lbl.style.borderColor = on ? p.color : '';
+      lbl.style.background  = on ? rgba(p.color, 0.09) : '';
+    });
+
+    /* show content, hide placeholder */
+    piPlaceholder.style.display = 'none';
+    piContent.style.display     = 'flex';
+
+    /* info panel */
+    piEyebrow.style.color = p.color;
+    piNum.textContent     = p.num;
+    piName.textContent    = p.name;
+    piTagline.textContent = p.tagline;
+    piDesc.textContent    = p.desc;
+
+    piProds.innerHTML = '';
+    if(p.arriving){
+      const b = document.createElement('div');
+      b.className = 'node-arriving'; b.textContent = '🌿 Products Arriving Soon';
+      piProds.appendChild(b);
+    } else {
+      p.products.forEach(pr => {
+        const s = document.createElement('span');
+        s.className = 'node-prod-pill'; s.textContent = pr.label;
+        s.onclick = () => openModal(pr.id);
+        piProds.appendChild(s);
+      });
+    }
+
+    piZones.innerHTML = '';
+    (p.zones[0]==='full' ? ALL_ZONES : p.zones).forEach(z => {
+      const tag = document.createElement('span');
+      tag.className         = 'pi-zone-tag';
+      tag.textContent       = z.charAt(0).toUpperCase()+z.slice(1);
+      tag.style.color       = p.color;
+      tag.style.background  = rgba(p.color, 0.08);
+      tag.style.borderColor = rgba(p.color, 0.28);
+      piZones.appendChild(tag);
+    });
+  }
+
+  tabs.forEach((t,i) => t.addEventListener('click', () => select(i)));
+
+  function onSvgReady(){
+    if(loadSvgGroups()){
+      if(currentIdx >= 0) applyPlantHighlight(PILLARS[currentIdx].zones, PILLARS[currentIdx].color);
+      else clearPlantHighlight(); // no pillar selected — all parts fully visible
+    }
+  }
+
+  if(plantObj){
+    plantObj.addEventListener('load', onSvgReady);
+    if(plantObj.contentDocument && plantObj.contentDocument.readyState === 'complete') onSvgReady();
+  }
+
+  /* No default selection — plant shows all parts, info shows placeholder */
 }
 
 /* ─── INDIA MAP HUB PING ─── */
@@ -344,7 +490,7 @@ function initKeyFactsCounter(){
 
 window.addEventListener('load',()=>{
   observeReveal();
-  initJourney();
+  initPillarUI();
   initIndiaPing();
   initWhyScroll();
   initKeyFactsCounter();
