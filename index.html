@@ -43,20 +43,22 @@
 
   <!-- HEADER -->
   <header id="main-header">
-    <div class="logo-left" onclick="navTo('home',event)">
-      <img src="img/trishul-color-01.svg" class="header-logo-img" alt="Trishul Biotech">
+    <div class="header-inner">
+      <div class="logo-left" onclick="navTo('home',event)">
+        <img src="img/trishul-color-01.svg" class="header-logo-img" alt="Trishul Biotech">
+      </div>
+      <nav class="header-nav-right">
+        <button class="nav-btn" onclick="navTo('tech',event)">UPCROP® System</button>
+        <button class="nav-btn" onclick="navTo('labs',event)">Labs</button>
+        <button class="nav-btn" onclick="navTo('india',event)">Products</button>
+        <button class="nav-btn" onclick="navTo('gallery',event)">Resources</button>
+        <button class="nav-btn" onclick="navTo('contact',event)">Contact</button>
+        <button class="nav-cta-pill" onclick="navTo('contact',event)">Partner With Us</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
     </div>
-    <nav class="header-nav-right">
-      <button class="nav-btn" onclick="navTo('tech',event)">UPCROP® System</button>
-      <button class="nav-btn" onclick="navTo('labs',event)">Labs</button>
-      <button class="nav-btn" onclick="navTo('india',event)">Products</button>
-      <button class="nav-btn" onclick="navTo('gallery',event)">Resources</button>
-      <button class="nav-btn" onclick="navTo('contact',event)">Contact</button>
-      <button class="nav-cta-pill" onclick="navTo('contact',event)">Partner With Us</button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
   </header>
 
   <!-- MOBILE NAV — Full-screen overlay -->
@@ -98,6 +100,53 @@
       </div>
 
     </div>
+
+
+    <!-- KEY FACTS — full-width stats section immediately after hero -->
+    <section class="keyfacts-section" id="keyfacts">
+      <!-- Decorative trishul pattern tiles -->
+      <div class="keyfacts-pattern" aria-hidden="true">
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+        <svg class="kf-trident" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="50" y1="8" x2="50" y2="90"/><line x1="20" y1="8" x2="20" y2="48"/><line x1="80" y1="8" x2="80" y2="48"/><path d="M20 48 Q20 58 50 58 Q80 58 80 48"/><line x1="50" y1="90" x2="50" y2="125"/><line x1="34" y1="125" x2="66" y2="125"/></g></svg>
+      </div>
+
+      <div class="keyfacts-inner">
+        <!-- LEFT: eyebrow + heading -->
+        <div class="keyfacts-left">
+          <div class="keyfacts-eyebrow">
+            <span class="keyfacts-eyebrow-dot"></span>
+            KEY FACTS
+          </div>
+          <h2 class="keyfacts-heading">Science-led.<br>Farmer-trusted.<br>India-proven.</h2>
+        </div>
+
+        <!-- RIGHT: 2×2 stat grid -->
+        <div class="keyfacts-right">
+          <div class="keyfacts-grid">
+            <div class="keyfact-item">
+              <div class="keyfact-num" data-target="7" data-suffix="">0</div>
+              <div class="keyfact-label">UPCROP® Biological Intelligence Pillars</div>
+            </div>
+            <div class="keyfact-item">
+              <div class="keyfact-num" data-target="4" data-suffix="">0</div>
+              <div class="keyfact-label">Dedicated R&amp;D Centres Across India</div>
+            </div>
+            <div class="keyfact-item">
+              <div class="keyfact-num" data-target="28" data-suffix="+">0</div>
+              <div class="keyfact-label">States in the Distribution Network</div>
+            </div>
+            <div class="keyfact-item">
+              <div class="keyfact-num" data-target="100" data-suffix="%">0</div>
+              <div class="keyfact-label">Organic Certified Product Range</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!-- WHY TRISHUL — section label sits above the card -->
@@ -195,74 +244,6 @@
     </div>
 
 
-
-
-    <!-- TRUST STRIP — rounded rect icon bar, placed after pillar wheel -->
-    <div class="trust-strip reveal" id="features-strip">
-      <div class="trust-strip-item">
-        <div class="trust-strip-icon">
-          <!-- 7 pillars: layered hexagons -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M12 2l8 4.5v9L12 21 4 15.5v-9z" />
-            <path d="M12 7l5 2.8v5.4L12 18l-5-2.8V9.8z" opacity="0.5" />
-          </svg>
-        </div>
-        <div class="trust-strip-text">
-          <div class="trust-strip-num">7</div>
-          <div class="trust-strip-label">Innovation Pillars</div>
-        </div>
-      </div>
-      <div class="trust-strip-divider"></div>
-      <div class="trust-strip-item">
-        <div class="trust-strip-icon">
-          <!-- ISO: shield check -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M12 2l7 3v6c0 4.4-3 8.4-7 9.5C8 19.4 5 15.4 5 11V5z" />
-            <polyline points="9 12 11 14 15 10" />
-          </svg>
-        </div>
-        <div class="trust-strip-text">
-          <div class="trust-strip-num golden">ISO</div>
-          <div class="trust-strip-label">9001:2015 Certified</div>
-        </div>
-      </div>
-      <div class="trust-strip-divider"></div>
-      <div class="trust-strip-item">
-        <div class="trust-strip-icon">
-          <!-- FCO: document stamp -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="9" y1="13" x2="15" y2="13" />
-            <line x1="9" y1="17" x2="13" y2="17" />
-          </svg>
-        </div>
-        <div class="trust-strip-text">
-          <div class="trust-strip-num">FCO</div>
-          <div class="trust-strip-label">Gazette Registered</div>
-        </div>
-      </div>
-      <div class="trust-strip-divider"></div>
-      <div class="trust-strip-item">
-        <div class="trust-strip-icon">
-          <!-- Zero waste: leaf recycle -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M2.2 14C3 9.5 6.5 6 11 5.2c4.3-.8 8.5 1.3 10.3 5" />
-            <polyline points="18 5 21.2 10.2 16 10.2" />
-            <path d="M21.8 10C21 14.5 17.5 18 13 18.8c-4.3.8-8.5-1.3-10.3-5" />
-            <polyline points="6 19 2.8 13.8 8 13.8" />
-          </svg>
-        </div>
-        <div class="trust-strip-text">
-          <div class="trust-strip-num golden">0</div>
-          <div class="trust-strip-label">Waste Manufacturing</div>
-        </div>
-      </div>
-    </div>
 
 
     <div class="clarity-section">
@@ -1283,10 +1264,10 @@
       var off = document.createElement('canvas');
       var offCtx = off.getContext('2d');
 
-      var SPACING = 52;
-      var RADIUS = 170;
-      var BASE_R = 1.8;
-      var MAX_R = 13;
+      var SPACING = 30;
+      var RADIUS = 130;
+      var BASE_R = 1.2;
+      var MAX_R = 5;
       var THRESH = 0.22;
       var LERP = 0.1;
       var dots = [];
@@ -1348,18 +1329,6 @@
 
         offCtx.clearRect(0, 0, off.width, off.height);
         offCtx.fillStyle = '#fff';
-
-        for (var i = 0; i < dots.length; i++) {
-          var d = dots[i], a1 = dotAct[d.key];
-          if (a1 < THRESH) continue;
-          var R1 = BASE_R + a1 * (MAX_R - BASE_R);
-          var rn = dotMap[(d.ci + 1) + '_' + d.ri];
-          if (rn && dotAct[rn.key] >= THRESH)
-            drawBlobBridge(offCtx, d.x, d.y, R1, rn.x, rn.y, BASE_R + dotAct[rn.key] * (MAX_R - BASE_R));
-          var dn = dotMap[d.ci + '_' + (d.ri + 1)];
-          if (dn && dotAct[dn.key] >= THRESH)
-            drawBlobBridge(offCtx, d.x, d.y, R1, dn.x, dn.y, BASE_R + dotAct[dn.key] * (MAX_R - BASE_R));
-        }
 
         for (var j = 0; j < dots.length; j++) {
           var d = dots[j], act = dotAct[d.key];

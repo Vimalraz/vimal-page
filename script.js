@@ -43,6 +43,9 @@ function navTo(id,e){
   if(hdr){
     hdr.classList.remove('scrolled'); /* reset — we're back at top */
     hdr.classList.remove('light-page');
+    /* solid white header on non-hero pages; transparent over hero */
+    if(id === 'home') hdr.classList.remove('header-solid');
+    else hdr.classList.add('header-solid');
   }
   _currentSection = id;
   observeReveal();
@@ -309,11 +312,42 @@ function closeModalOutside(e){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
+/* ─── KEY FACTS COUNTER ANIMATION ─── */
+function initKeyFactsCounter(){
+  const nums = document.querySelectorAll('.keyfact-num[data-target]');
+  if(!nums.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      const el     = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur    = 1400; // ms
+      const start  = performance.now();
+
+      function tick(now){
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / dur, 1);
+        /* ease-out cubic */
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if(progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+
+  nums.forEach(n => io.observe(n));
+}
+
 window.addEventListener('load',()=>{
   observeReveal();
   initJourney();
   initIndiaPing();
   initWhyScroll();
+  initKeyFactsCounter();
   /* initParticles(); — disabled */
   /* ─── HEADER SCROLL ─── */
   const mainHeader = document.getElementById('main-header');
@@ -337,6 +371,7 @@ window.addEventListener('load',()=>{
     if(ls)ls.classList.add('hide');
   },700);
 });
+
 
 /* ─── MOBILE NAV ─── */
 function toggleMobileNav(){

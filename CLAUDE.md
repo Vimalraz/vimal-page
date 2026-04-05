@@ -85,13 +85,19 @@ The site is a **tab-based SPA** — all content lives inside `index.html`. Navig
 ### Navigation
 - `navTo(sectionId, event)` defined in `script.js` handles all section transitions
 - Mobile nav uses `toggleMobileNav()` / `closeMobileNav()` — full-screen overlay
-- Header `#main-header` has glassmorphism effect on scroll
+- Header `#main-header` is a full-width fixed bar; all content lives inside `.header-inner` (width: 70%, centred)
+- **Header states:**
+  - Default (home at top): `transparent` background, white logo (`filter: brightness(0) invert(1)`), white nav text
+  - `.scrolled` (scroll > 10px): glassmorphism (`rgba(255,255,255,0.80)` + backdrop-blur), coloured logo, dark nav
+  - `.header-solid` (non-home sections, set by `navTo`): solid `#ffffff`, coloured logo, dark nav
 - Nav buttons get `.active` class based on current section
 - **Underline animation:** Left-to-right wipe effect on nav button hover
 
 ### Animations & Interactions
 - **Loading screen:** `#loading-screen` fades out on `DOMContentLoaded`
-- **Hero canvas:** `#hero-grid-canvas` — dot-grid constellation animation
+- **Hero:** Full-viewport (`height: 100vh`, no margin/border-radius), video behind transparent fixed header. Content (`.hero-bl-content`) is `width: 70%` centered — left edge aligns with `.header-inner` left edge
+- **Hero canvas:** `#hero-grid-canvas` — dot-grid dots-only effect (blob bridges removed), tight 30px spacing
+- **Scroll ease-out coast:** Native scroll is untouched. After the wheel stops (60ms timeout), the last measured scroll velocity decays at 0.84× per frame until it reaches < 0.4 px/frame. Both `wheel` and `scroll` listeners are passive — no `preventDefault`. Tuning: decay factor in the `coast()` function in `script.js`.
 - **Scroll reveals:** Elements with `.reveal` class animate in via `IntersectionObserver`
   - Delay variants: `.reveal-delay-1`, `.reveal-delay-2`
 - **Why Trishul section:** Compact card with sticky scroll — image left, text right, 4 slides cross-fade on scroll
