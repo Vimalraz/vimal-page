@@ -4461,6 +4461,7 @@ footer {
   margin: 0 auto 48px;
   padding: 0 6%;
   align-items: flex-end;
+  height: 185px; /* fixed = capital(10) + max-shaft(165) + base(10) — prevents layout jump on hover */
 }
 
 /* ── Column-shaped pillar button ── */
@@ -4501,16 +4502,16 @@ footer {
 
 /* Shaft */
 .pt-shaft {
-  width: 68%;
+  width: 76%;
   background: #eaeae6;
   border-left: 1.5px solid #d4d4ce;
   border-right: 1.5px solid #d4d4ce;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 5px;
-  padding: 0 4px 18px;
+  justify-content: space-between;
+  gap: 0;
+  padding: 14px 4px 14px;
   min-height: 90px;
   transition: background 0.22s ease, border-color 0.22s ease, min-height 0.22s ease;
 }
@@ -4543,7 +4544,7 @@ footer {
 
 .pt-num {
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--pc);
@@ -4552,16 +4553,23 @@ footer {
 }
 
 .pillar-tab.active .pt-num,
-.pillar-tab.p-hovered .pt-num { opacity: 1; }
+.pillar-tab.p-hovered .pt-num { opacity: 1; color: var(--pc); }
+
+.pillar-tab.active .pt-name,
+.pillar-tab.p-hovered .pt-name { color: var(--pc); }
 
 .pt-name {
   font-family: 'Raleway', sans-serif;
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #444;
   display: block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   text-align: center;
-  line-height: 1.2;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .pillar-tab.active .pt-name {
@@ -4643,11 +4651,12 @@ footer {
 }
 
 .pi-name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Raleway', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 800;
   color: #111;
   line-height: 1.05;
+  letter-spacing: -0.5px;
   margin: 0;
 }
 
@@ -4663,6 +4672,7 @@ footer {
 
 .pi-desc {
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.8;
   color: #444;
   margin: 0;

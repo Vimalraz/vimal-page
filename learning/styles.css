@@ -1,0 +1,7 @@
+.entry {
+    display: flex;
+}
+
+.entry p.date h2 {
+    margin: 0;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-04-2026</title>
+    <link rel="stylesheet" href="/learning/entries/styles.css">
+</head>
+
+<body>
+    <h1>Thinking of implementing a learning log.</h1>
+    <hr>
+    <p>Today is the first day I am starting some rudimentary learning log.</p>
+    <p>I have 0 experience building any web tool manually other than building some using AI tools like claude</p>
+    <h3>Current thinking</h3>
+    <p> Each entries will be their own page, with difference in content, and all the entries will be stored in the
+        entires folder </p>
+    <p> The main learning page will have a list of all entries along with the published date</p>
+    <p>so entries stored in entries folder as html files, and links in the main folder</p>
+
+    <h3>Starting with....</h3>
+    <p> some p element for date and h3 element for the entry, the main title is h1 along with h.ruler</p>
+    <p><strong>First problem:</strong> I need to know how to put the entries in the same line like 'Date..Entry title'
+    </p>
+    <p>Seems like, i need to contain both the date and h3 entry in a container called div</p>
+    <p>div is like a powerpoing grouping - where multiple elements are grouped to form a section</p>
+    <p>using textarea as code block for now, dont know how to create code block as of now</p>
+    <textarea readonly rows="5" cols="100">
+    <div class="myDiv">
+      <h2>This is a heading in a div element</h2>
+      <p>This is some text in a div element.</p>
+    </div>
+    </textarea>
+    <p> the h2 and p still appear one line after the other, they are not inline elements, they consume one line block
+        each,
+        pushing the other element to next row block.</p>
+    <p>Now that the date and entry element belong to a container, i have to make it a flexible box or in other words
+        flex box</p>
+    <textarea readonly rows="5" cols="100">
+        // by targeting the div by class = "entry"
+        .entry {
+            display: flex;
+        }
+    </textarea>
+    <p>Now I need to write it to the style.css and link to html</p>
+    <p>Now it looks like this:</p>
+    <img src="/learning/entries/img/07042026-entry-element.png" alt="same line entry now working">
+    <p>but the elements should be middle aligned along with some space between them. </p>
+    <p>middle align issue - default margin is applied for the p tag which is 16p, lets remove that</p>
+    <img src="/learning/entries/img/07042026-margin-remove.png" alt="after margin is removed for both date and h2">
+    <p>DUDE, what is a margin, there is still space in the bottom of the p.date section</p>
+    <p class="stop-comment"> Okay, I am stopping here for today, tomorrow's action item from today is to understand
+        margin,
+        padding and everything to do with the boxes. and align content in div box to middle. </p>
+    <p class="midstop"> End of 07-04-2026</p>
+</body>
+
+</html>

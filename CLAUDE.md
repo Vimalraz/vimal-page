@@ -105,7 +105,15 @@ The site is a **tab-based SPA** — all content lives inside `index.html`. Navig
   - `.why-card-sticky` = actual visual card (`position: sticky; height: 540px`), gray bg, rounded, centered
   - Scroll detection uses `.why-outer-card.getBoundingClientRect().top` in `initWhyScroll()`
   - Dot navigation: `.why-dot[data-target]` clicks scroll to `card.top + i × viewH`
-- **UPCROP Journey:** Animated SVG path + node cards that animate in on scroll
+- **UPCROP® Pillar UI (`#upcrop-journey`):** State-based interactive section — 7 pillar column buttons, live plant SVG zone highlighting, info panel
+  - `initPillarUI()` in `script.js` wires all interactivity
+  - Pillar tabs are column-shaped (capital `::before` + shaft `.pt-shaft` + base `::after`)
+  - Accordion hover: JS adds `p-hovered` / `p-near1` / `p-near2` classes on `mouseenter`; container `mouseleave` clears them
+  - **`.pillar-tabs` has a fixed `height: 185px`** — this is critical to prevent layout jump. Without it, the container grows when pillars expand and the content below jumps. 185 = capital(10) + max-shaft(165) + base(10).
+  - Plant SVG (`img/Plant-scientific.svg`) loaded via `<object>` tag; internal groups accessed via `contentDocument.getElementById()`
+  - Zone-to-SVG group map: `roots→Roots`, `stem→Stem`, `leaves→Leaves`, `canopy→Canopy`, `fruit→[Fruit,Flowers]`
+  - Product cards rendered in `select()` — each has a product mockup SVG image + product name, clicking opens modal
+  - No default selection on load — all plant zones fully visible, info panel shows placeholder text
 - **Product modals:** `openModal(productId)` / `closeModal()` for product detail overlays
 
 ### Why Trishul Section (Critical Layout)

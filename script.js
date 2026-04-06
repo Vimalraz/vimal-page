@@ -129,16 +129,16 @@ function initPillarUI(){
       zones:['roots'], products:[], arriving:true },
     { num:'02', name:'PhytoBoost',   color:'#2A5C1E', tagline:'Accelerated Vigour & Canopy Building',
       desc:'Cytokinins stimulate rapid cell division and lateral growth, while low-MW polysaccharides act as fast carbon and signalling molecules to accelerate early vegetative development.',
-      zones:['leaves','canopy'], products:[{id:'pb201',label:'UPC PB 201 P'},{id:'pb261',label:'UPC PB 261 L'}], arriving:false },
+      zones:['leaves','canopy'], products:[{id:'pb201',label:'UPC PB 201 P',img:'img/Standing-Pouch-008.svg'},{id:'pb261',label:'UPC PB 261 L',img:'img/Bottle-009.svg'}], arriving:false },
     { num:'03', name:'Stressilient', color:'#7A3D10', tagline:'Abiotic Stress Shield & Recovery',
       desc:'Phlorotannins provide UV and oxidative protection, while glycine betaine maintains cellular water balance and prevents stress-induced tissue collapse.',
-      zones:['full'], products:[{id:'st351',label:'UPC ST 351 L'}], arriving:false },
+      zones:['full'], products:[{id:'st351',label:'UPC ST 351 L',img:'img/Bottle-010.svg'}], arriving:false },
     { num:'04', name:'QualiGain',    color:'#4A1A6E', tagline:'Harvest Quality & Post-Harvest Value',
       desc:'Auxins expand root systems, peptides support protein synthesis, and salicylic acid signalling strengthens cell walls and tissue firmness for export-grade quality.',
-      zones:['fruit'], products:[{id:'qg451',label:'UPC QG 451 L'}], arriving:false },
+      zones:['fruit'], products:[{id:'qg451',label:'UPC QG 451 L',img:'img/Bottle-011.svg'}], arriving:false },
     { num:'05', name:'NutriSpike',   color:'#1A3570', tagline:'Metabolic Fueling & Nutrient Efficiency',
       desc:'Polyols support cellular energy balance and carbon metabolism, enhancing ATP-driven nutrient transport even under low-energy conditions.',
-      zones:['stem','leaves'], products:[{id:'ns501',label:'UPC NS 501 P'}], arriving:false },
+      zones:['stem','leaves'], products:[{id:'ns501',label:'UPC NS 501 P',img:'img/Standing-Pouch-007.svg'}], arriving:false },
     { num:'06', name:'BioGuard',     color:'#C0392B', tagline:'Biological Plant Protection',
       desc:'BioGuard targets the priming of systemic resistance pathways using novel marine algae bioactives. The science is in development — the outcomes we are working toward are significant.',
       zones:['full'], products:[], arriving:true },
@@ -165,7 +165,6 @@ function initPillarUI(){
   const piTagline   = section.querySelector('#pi-tagline');
   const piDesc      = section.querySelector('#pi-desc');
   const piProds     = section.querySelector('#pi-products');
-  const piZones     = section.querySelector('#pi-zones');
   const piEyebrow   = section.querySelector('.pi-eyebrow');
   const plantObj    = section.querySelector('#plant-obj');
   const piPlaceholder = section.querySelector('#pi-placeholder');
@@ -256,30 +255,43 @@ function initPillarUI(){
     piProds.innerHTML = '';
     if(p.arriving){
       const b = document.createElement('div');
-      b.className = 'node-arriving'; b.textContent = '🌿 Products Arriving Soon';
+      b.className = 'node-arriving'; b.textContent = 'Products Arriving Soon';
       piProds.appendChild(b);
-    } else {
+    } else if(p.products.length > 0){
+      const title = document.createElement('div');
+      title.className = 'pi-products-title'; title.textContent = 'Products';
+      const grid = document.createElement('div');
+      grid.className = 'pi-products-grid';
       p.products.forEach(pr => {
-        const s = document.createElement('span');
-        s.className = 'node-prod-pill'; s.textContent = pr.label;
-        s.onclick = () => openModal(pr.id);
-        piProds.appendChild(s);
+        const card = document.createElement('div');
+        card.className = 'pi-product-card';
+        card.onclick = () => openModal(pr.id);
+        card.innerHTML = `<img src="${pr.img}" alt="${pr.label}"><div class="pi-product-name">${pr.label}</div>`;
+        grid.appendChild(card);
       });
+      piProds.appendChild(title);
+      piProds.appendChild(grid);
     }
-
-    piZones.innerHTML = '';
-    (p.zones[0]==='full' ? ALL_ZONES : p.zones).forEach(z => {
-      const tag = document.createElement('span');
-      tag.className         = 'pi-zone-tag';
-      tag.textContent       = z.charAt(0).toUpperCase()+z.slice(1);
-      tag.style.color       = p.color;
-      tag.style.background  = rgba(p.color, 0.08);
-      tag.style.borderColor = rgba(p.color, 0.28);
-      piZones.appendChild(tag);
-    });
   }
 
   tabs.forEach((t,i) => t.addEventListener('click', () => select(i)));
+
+  /* accordion hover */
+  const tabsContainer = section.querySelector('.pillar-tabs');
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('mouseenter', () => {
+      tabs.forEach((t, j) => {
+        t.classList.remove('p-hovered','p-near1','p-near2');
+        const d = Math.abs(i - j);
+        if(d === 0) t.classList.add('p-hovered');
+        else if(d === 1) t.classList.add('p-near1');
+        else if(d === 2) t.classList.add('p-near2');
+      });
+    });
+  });
+  tabsContainer.addEventListener('mouseleave', () => {
+    tabs.forEach(t => t.classList.remove('p-hovered','p-near1','p-near2'));
+  });
 
   function onSvgReady(){
     if(loadSvgGroups()){
