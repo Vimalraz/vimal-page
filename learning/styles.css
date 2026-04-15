@@ -3,3 +3,9 @@
     align-items: center;
     gap: 20px;
 }
+
+body {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    width: 55%;
+    margin: 0 auto;
+}

@@ -1,6 +1,6 @@
-body {
+html {
     font-family: "JetBrains Mono", "Fira Code", monospace;
-    width: 70%;
+    width: 55%;
     margin: 0 auto;
 }
 
@@ -27,6 +27,6 @@ figcaption {
     font-style: italic;
 }
 
-p {
-    max-width: 60%;
+.navigation {
+    font-size: 0.9em;
 }
