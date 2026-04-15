@@ -1,3 +1,9 @@
+body {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    width: 70%;
+    margin: 0 auto;
+}
+
 img {
     border: 1px solid #e7e7e7;
     border-radius: 5px;
