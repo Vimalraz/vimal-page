@@ -45,10 +45,10 @@
     </textarea>
     <p>Now I need to write it to the style.css and link to html</p>
     <p>Now it looks like this:</p>
-    <img src="/learning/entries/img/07042026-entry-element.png" alt="same line entry now working">
+    <img src="img/07042026-entry-element.png" alt="same line entry now working">
     <p>but the elements should be middle aligned along with some space between them. </p>
     <p>middle align issue - default margin is applied for the p tag which is 16p, lets remove that</p>
-    <img src="/learning/entries/img/07042026-margin-remove.png" alt="after margin is removed for both date and h2">
+    <img src="img/07042026-margin-remove.png" alt="after margin is removed for both date and h2">
     <p>DUDE, what is a margin, there is still space in the bottom of the p.date section</p>
     <p class="stop-comment"> Okay, I am stopping here for today, tomorrow's action item from today is to understand
         margin,
@@ -62,14 +62,14 @@
         <li>Padding: The space inside the border of an element.</li>
         <li>Border: The line that surrounds an element.</li>
     </ul>
-    <img src="/learning/entries/img/07042026-margin-padding-border.png" alt="margin padding border">
+    <img src="img/07042026-margin-padding-border.png" alt="margin padding border">
     <p>The image here is a little misleading, there are only 2 space elements, margin and padding. Border is the line
         thickness which also in a way creates some space. But shown as 3 elements in the image.</p>
     <p>Separately, the p element is filling the vertical space with the content, but if it is forcefully increased, the
         content is aligned to the top (like adding it to a div, which has bigger elements in the page like a h2)</p>
     <div class="sidebyside">
-        <img src="/learning/entries/img/07042026-p-as-separate-element.png" alt="">
-        <img src="/learning/entries/img/08042026-p-within-container.png" alt="">
+        <img src="img/07042026-p-as-separate-element.png" alt="">
+        <img src="img/08042026-p-within-container.png" alt="">
     </div>
     <p>It looks like this is caused by flexbox behavior. Flexbox stretches stuff by default</p>
     <p>Flexbox tries to align items in the cross axis by default, this stretches items to align vertically both top and
@@ -78,7 +78,7 @@
     <p>Used the same method to fix the streteching of side by side image above as well.</p>
     <p>Have to use <code>align-items: center</code> to arrange the date and entry title in same line. Now it is aligned,
         and with some gap added it looks like this.</p>
-    <img src="/learning/entries/img/08042026-date-aligned.png" alt="">
+    <img src="img/08042026-date-aligned.png" alt="">
     <p>for the above code inline block i have used <code>&lt;code&gt;</code>block and have used some sort of
         <code>padding</code> to make it look a bit spaced, along with <code>border-color:</border-color></code>.
     </p>
@@ -89,7 +89,7 @@
     <p>One way is to wrap the image and caption in a container called figure and use figcaption and using css to style
         it. used <code>font-size: 0.9em; color: #555; font-style: italic;</code></p>
     <figure>
-        <img src="/learning/entries/img/08042026-p-within-container.png" alt="">
+        <img src="img/08042026-p-within-container.png" alt="">
         <figcaption>Fig.1 - Testing image with caption</figcaption>
     </figure>
     <p>I now think I have a good understanding of how to use flexbox and align items within a container.</p>
