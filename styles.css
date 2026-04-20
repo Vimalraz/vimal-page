@@ -1,7 +1,7 @@
-.main-Nav {
-  display:flex;
-  justify-content: center;
-  gap: 25px;
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 body {
