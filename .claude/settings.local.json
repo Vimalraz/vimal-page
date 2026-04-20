@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 -c \":*)",
-      "mcp__Claude_Preview__preview_start",
-      "mcp__plugin_playwright_playwright__browser_navigate"
-    ]
-  }
-}

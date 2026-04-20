@@ -1,4 +1,0 @@
-[    6430ms] [ERROR] Failed to load resource: net::ERR_QUIC_PROTOCOL_ERROR @ https://unpkg.com/leaflet@1.9.4/dist/leaflet.js:0
-[    8928ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap:0
-[    9371ms] ReferenceError: L is not defined
-    at initMap (http://localhost:3000/:1457:9)
