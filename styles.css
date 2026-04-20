@@ -1,11 +1,11 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 400px;
 }
 
 body {
     font-family: "JetBrains Mono", "Fira Code", monospace;
-    width: 55%;
+    width: 35%;
     margin: 0 auto;
 }
