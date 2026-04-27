@@ -1,3 +1,9 @@
+html {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    width: 40%;
+    margin: 0 auto;
+}
+
 .entry {
     display: flex;
     align-items: center;
@@ -7,6 +13,9 @@
 
 body {
     font-family: "JetBrains Mono", "Fira Code", monospace;
-    width: 55%;
     margin: 0 auto;
+}
+
+.navigation {
+    font-size: 0.9em;
 }
