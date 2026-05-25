@@ -1,0 +1,11 @@
+{
+  "name": "theintermentalist",
+  "version": "1.0.0",
+  "description": "The InterMentalist - South India's top influencer marketing agency website",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=index.html",
+    "start": "npx live-server --port=3000 --open=index.html"
+  },
+  "keywords": ["influencer-marketing", "south-india"],
+  "author": "The InterMentalist"
+}
