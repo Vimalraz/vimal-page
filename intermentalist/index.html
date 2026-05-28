@@ -12,6 +12,8 @@
     <link rel="icon" href="original/theintermentalist.com/images/favicon.ico">
     <!-- Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Open Graph -->
     <meta property="og:title" content="The InterMentalist - South India's top influencer marketing agency">
     <meta property="og:description" content="South India's top influencer marketing agency">
@@ -769,7 +771,7 @@
     ===================================================== */
         #about {
             background: var(--white);
-            padding: 100px 0 0;
+            padding: 0;
         }
 
         .about-grid {
@@ -2021,7 +2023,8 @@
         footer {
             background: #fbfbfc;
             /* Soft premium off-white, extremely easy on the eyes */
-            padding: 0 0 50px; /* 0px top, 50px bottom */
+            padding: 0 0 50px;
+            /* 0px top, 50px bottom */
             color: var(--text-dark);
             border-top: none;
         }
@@ -2031,7 +2034,8 @@
             width: 100%;
             height: 3px;
             /* Sleek visual weight */
-            margin-bottom: 100px; /* Exactly 100px after the separator */
+            margin-bottom: 100px;
+            /* Exactly 100px after the separator */
             align-items: center;
         }
 
@@ -2057,7 +2061,8 @@
         .foot-wrap {
             display: flex;
             flex-direction: column;
-            gap: 0; /* Cleared generic flex gap to manage explicit margins */
+            gap: 0;
+            /* Cleared generic flex gap to manage explicit margins */
         }
 
         .foot-main {
@@ -2210,7 +2215,8 @@
             align-items: center;
             justify-content: center;
             padding-top: 32px;
-            margin-top: 100px; /* Exactly 100px spacing before copyright */
+            margin-top: 100px;
+            /* Exactly 100px spacing before copyright */
             border-top: 1px solid var(--mid-grey);
             flex-wrap: wrap;
             gap: 24px;
@@ -2515,7 +2521,7 @@
 
             /* About Section Mobile Spacing & Layout Fixes */
             #about {
-                padding: 50px 0 0 !important;
+                padding: 0 !important;
             }
 
             .about-grid {
@@ -2626,15 +2632,18 @@
             }
 
             footer {
-                padding: 0 0 50px !important; /* 0px top, 50px bottom on mobile */
+                padding: 0 0 50px !important;
+                /* 0px top, 50px bottom on mobile */
             }
 
             .foot-sep {
-                margin-bottom: 50px !important; /* Exactly 50px after separator on mobile */
+                margin-bottom: 50px !important;
+                /* Exactly 50px after separator on mobile */
             }
 
             .foot-bottom {
-                margin-top: 50px !important; /* Exactly 50px before copyright on mobile */
+                margin-top: 50px !important;
+                /* Exactly 50px before copyright on mobile */
                 padding-top: 24px !important;
             }
 
@@ -2859,66 +2868,79 @@
      ABOUT
 ==================================================== -->
     <section id="about" aria-label="About">
-        <div class="wrap">
-            <!-- About the Founder -->
-            <div class="about-grid">
-                <!-- Left: Image -->
-                <div class="about-img-wrap fade">
-                    <img src="original_files/01.jpg"
-                        alt="Shivashish Tarkas, Founder of The InterMentalist" loading="lazy">
-                    <div class="about-badge">
-                        <span class="about-badge-n">10+</span>
-                        <span class="about-badge-l">Years of Excellence</span>
-                    </div>
-                </div>
-                <!-- Right: Text -->
-                <div class="about-text">
-                    <span class="t-label fade">The Founder</span>
-                    <h2 class="about-name fade d1">Shivashish<br>Tarkas</h2>
-                    <p class="about-role fade d1">Founder &amp; CEO — The InterMentalist</p>
-                    <div class="about-body fade d2">
-                        <p>Started his entrepreneurial journey at 21 in 2015. With an initial investment of just ₹3,500,
-                            Shivashish set on the journey of his dreams — hailing from a middle-class background, a boy
-                            with big dreams and a focused mind.</p>
-                        <p>Starting with <strong>ZERO capital, ZERO infrastructure, and ZERO business knowledge</strong>
-                            — all he had was a vision, the power to believe in himself, and a crowd ready to laugh at
-                            him. He proved them all wrong.</p>
-                        <p>Today, Shivashish leads South India's most aggressive and result-driven influencer marketing
-                            agency — a testament to grit, vision, and an unwavering belief in the power of authentic
-                            influence.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
         <!-- Journey / About The InterMentalist -->
         <div class="journey" id="journey-inner">
             <div class="wrap">
                 <div class="journey-grid">
                     <div class="journey-sticky">
                         <span class="t-label fade">About The Agency</span>
-                        <h3 class="t-md fade d1" style="margin-top:16px;margin-bottom:20px">From ₹3,500 to <br>South
-                            India's Finest Agency</h3>
+                        <h3 class="t-md fade d1" style="margin-top:16px;margin-bottom:20px">You Have US,<br><span
+                                style="color:var(--blue)">You Have South.</span></h3>
                     </div>
                     <div class="journey-body fade">
-                        <p>Started in 2015 with just ₹3,500, The InterMentalist has today grown into <strong>South
-                                India's finest influencer marketing agency</strong>, partnering with almost every brand
-                            that serves customers at a pan-India or global level.</p>
-                        <p>The agency works closely with the South Indian film industry and the entire creator ecosystem
-                            across the region — strategising, identifying the right people, drafting scripts, and
-                            providing pre- and post-production services along with complete analysis and statistics.</p>
-                        <p>Over the decade, the agency has worked with <strong>200+ pan-Indian and global
-                                brands</strong>, <strong>400+ premium actors, influencers and creators</strong> from the
-                            South Indian digital space. They are one of the most aggressive and result-driven players in
-                            the game.</p>
-                        <p>The InterMentalist has played a defining role in shaping the South's creator economy —
-                            building sustainable models for influencer marketing and digital movie promotions with
-                            efficient processes and deep cultural understanding.</p>
-                        <p>At its core lies a rare strength: <em>the ability to influence the influencers</em> — a power
-                            that has made it the most preferred partner for brands and agencies seeking to win in South
-                            India.</p>
+                        <p>Founded in 2015 with nothing but instinct, intent, and ₹3,500, <strong>The
+                                InterMentalist</strong> has grown into one of South India’s most influential forces in
+                            creator economy of south.</p>
+                        <p>Today, the agency stands at the centre of the South Indian entertainment and creator
+                            ecosystem — working with brands that operate at a national and global scale, while
+                            collaborating with almost every significant voice across the region. From superstars and
+                            film personalities to internet-first creators and emerging digital talent, The
+                            InterMentalist has built deep relationships across every layer of influence.</p>
+                        <p>What sets the agency apart is not just access — but <strong>understanding</strong>. A sharp
+                            grasp of regional culture, audience behaviour, internet trends, and storytelling allows the
+                            team to create campaigns that feel native, not manufactured.</p>
+                        <p>From influencer marketing and digital movie promotions to creator strategy, scripting,
+                            production, and campaign analytics, The InterMentalist operates as a <strong>full-scale
+                                strategic partner</strong> built specifically for South India.</p>
+                        <p>Over the years, the agency has quietly shaped how brands enter and win in the South —
+                            creating systems, processes, and scalable models that have redefined influencer-led
+                            marketing in the region.</p>
+                        <p>At its core lies a rare capability: <em>the power to influence the people who influence
+                                culture</em>. That is what makes The InterMentalist the preferred partner for brands,
+                            studios, and agencies looking to build real impact in South India.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap" style="padding-top: 100px; padding-bottom: 100px;">
+            <!-- About the Founder -->
+            <div class="about-grid">
+                <!-- Left: Image -->
+                <div class="about-img-wrap fade">
+                    <img src="original_files/01.jpg" alt="Shivashish Tarkas, Founder of The InterMentalist"
+                        loading="lazy">
+                    <div class="about-badge">
+                        <span class="about-badge-n">10+</span>
+                        <span class="about-badge-l">Years of Experience<br>and Expertise</span>
+                    </div>
+                </div>
+                <!-- Right: Text -->
+                <div class="about-text">
+                    <span class="t-label fade">The Founder</span>
+                    <h2 class="about-name fade d1">Shivashish<br><span style="color:var(--blue)">Tarkas</span></h2>
+                    <p class="about-role fade d1">Founder &amp; CEO — The InterMentalist</p>
+                    <div class="about-body fade d2">
+                        <p>At 21, with just ₹3,500 in hand and no roadmap to follow, Shivashish stepped into
+                            entrepreneurship with nothing except conviction.</p>
+                        <p><strong>No funding. No infrastructure. No industry backing. No business education.</strong>
+                            Just a middle-class boy carrying a vision too big for the room he came from.</p>
+                        <p>In a world where people trusted experience, pedigree, and privilege — he chose belief. While
+                            most doubted him, dismissed him, or laughed at the audacity of his dreams, he kept building
+                            quietly, relentlessly, and without shortcuts.</p>
+                        <p>What began as a one-man pursuit driven by instinct and obsession has today evolved into one
+                            of South India’s most influential and result-driven marketing forces.</p>
+                        <p>But the story was never about money. It was about perspective — about understanding people
+                            before platforms did, and recognising the power of influence before the industry realised
+                            its value.</p>
+                        <p>Today, Shivashish stands at the intersection of brands, cinema, creators, and culture —
+                            leading an agency that has helped shape the South Indian creator ecosystem from the ground
+                            up.</p>
+                        <p>His journey is proof that you do not need perfect conditions to build something powerful.
+                            Sometimes, all it takes is the <strong>courage to start</strong> before the world gives you
+                            permission.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -2927,7 +2949,8 @@
         <div class="services">
             <div class="wrap">
                 <span class="t-label fade">All Operations Under One Roof</span>
-                <h3 class="t-md fade d1" style="margin-top:12px;margin-bottom:20px">What We Do</h3>
+                <h3 class="t-md fade d1" style="margin-top:12px;margin-bottom:20px">What <span
+                        style="color:var(--blue)">We Do</span></h3>
             </div>
             <div class="cards-stack-wrap">
                 <div class="cards-stack">
@@ -3018,9 +3041,8 @@
     <section id="credentials" aria-label="Credentials">
         <div class="wrap">
             <span class="t-label fade">Trust &amp; Recognition</span>
-            <h2 class="t-lg fade d1" style="margin-top:10px">Credentials</h2>
-            <p class="t-body fade d2" style="max-width:480px;margin-top:14px">Recognised by industry bodies and featured
-                across leading media platforms.</p>
+            <h2 class="t-lg fade d1" style="margin-top:10px">Trusted Across <span style="color:var(--blue)">The Industry</span></h2>
+            <p class="t-body fade d2" style="max-width:540px;margin-top:14px">Recognised by media, trusted by brands, respected across the ecosystem.</p>
 
             <div class="cred-columns">
                 <!-- Recognised By -->
@@ -3085,8 +3107,9 @@
         <div class="wrap">
             <div class="port-header">
                 <div>
-                    <span class="t-label fade">Our Work</span>
-                    <h2 class="t-lg fade d1" style="margin-top:10px">Portfolio</h2>
+                    <span class="t-label fade">The work speaks louder than promises.</span>
+                    <h2 class="t-lg fade d1" style="margin-top:10px">Our <span
+                            style="color:var(--blue)">Portfolio</span></h2>
                 </div>
             </div>
 
@@ -3098,7 +3121,7 @@
             <div class="port-actions">
                 <a href="updated content/The_InterMentalist_Portfolio.pdf" target="_blank" class="btn btn-primary"
                     id="pdf-download-btn" download>
-                    <span>Download Full Clientele PDF</span>
+                    <span>Download our Portfolio</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -3106,8 +3129,8 @@
                         <line x1="12" y1="15" x2="12" y2="3" />
                     </svg>
                 </a>
-                <p class="port-note">View our complete brand partnerships, campaign case studies, and creator network in
-                    the PDF.</p>
+                <p class="port-note">A closer look at our journey, our systems, and the elite brands and personalities
+                    we’ve worked with.</p>
             </div>
         </div>
     </section>
@@ -3117,10 +3140,9 @@
 ==================================================== -->
     <section id="clients" aria-label="Our Clients">
         <div class="wrap clients-head">
-            <span class="t-label fade">Trusted By</span>
-            <h2 class="t-lg fade d1" style="margin-top:10px">Happy Clients</h2>
-            <p class="t-body fade d2" style="max-width:480px;margin-top:12px">
-                A decade of partnerships with 200+ brands — from global FMCG giants to South Indian cinema.
+            <h2 class="t-lg fade d1" style="margin-top:10px">Happy <span style="color:var(--blue)">Clients</span></h2>
+            <p class="t-body fade d2" style="max-width:540px;margin-top:12px">
+                Chances are, your favourite brand has already trusted us with its influencer marketing.
             </p>
         </div>
         <!-- Infinite Slider / Ticker -->
@@ -3158,8 +3180,8 @@
                 <span class="t-label fade">Get In Touch</span>
                 <h2 class="t-lg fade d1" style="margin-top:10px">Let's Work <span
                         style="color:var(--blue)">Together</span></h2>
-                <p class="t-body fade d2" style="max-width:540px; margin: 14px auto 0;">Ready to take your brand to the
-                    next level in South India? Send us a message and our team will get back to you shortly.</p>
+                <p class="t-body fade d2" style="max-width:540px; margin: 14px auto 0;">Ready to win South India? Let’s
+                    build influence that actually moves culture</p>
             </div>
 
             <!-- Designed like a single card -->
@@ -3193,6 +3215,11 @@
                                     required></textarea>
                             </div>
                         </div>
+                    </div>
+                    <!-- Google reCAPTCHA Widget -->
+                    <div class="recaptcha-wrap"
+                        style="display: flex; justify-content: center; margin-top: 24px; margin-bottom: 8px;">
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                     </div>
                     <!-- Centered send button -->
                     <div class="c-form-submit">
@@ -3672,6 +3699,18 @@
             if (cForm) {
                 cForm.addEventListener('submit', async e => {
                     e.preventDefault();
+
+                    // Verify reCAPTCHA has been completed
+                    if (typeof grecaptcha !== 'undefined') {
+                        const recaptchaVal = grecaptcha.getResponse();
+                        if (!recaptchaVal) {
+                            formMsg.style.display = 'block';
+                            formMsg.style.cssText = 'display:block;background:rgba(232,0,30,0.06);border:1px solid rgba(232,0,30,0.2);border-radius:6px;padding:14px;color:#E8001E;font-size:14px;text-align:center;margin-top:12px';
+                            formMsg.textContent = '✗ Please verify you are not a bot.';
+                            return;
+                        }
+                    }
+
                     cfSubmit.querySelector('span').textContent = 'Sending…';
                     cfSubmit.disabled = true;
                     try {
@@ -3685,6 +3724,9 @@
                             formMsg.style.cssText = 'display:block;background:rgba(2,175,239,0.08);border:1px solid rgba(2,175,239,0.3);border-radius:6px;padding:14px;color:#02afef;font-size:14px;text-align:center;margin-top:12px';
                             formMsg.textContent = '✓ Message sent! We\'ll respond within 24 hours.';
                             cForm.reset();
+                            if (typeof grecaptcha !== 'undefined') {
+                                grecaptcha.reset();
+                            }
                         } else {
                             throw new Error();
                         }
