@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4180/)",
+      "mcp__plugin_playwright_playwright__browser_type",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4185/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4190/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4195/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4200/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4205/)"
+    ]
+  }
+}
